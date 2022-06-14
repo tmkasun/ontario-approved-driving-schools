@@ -59,7 +59,7 @@ export default function MarkerCard({ gasStation }) {
                         marginBottom: 12,
                     }}
                     color="textSecondary">
-                    Available Vaccines
+                    Available Fuel Types
                 </Typography>
                 <Box ml={3}>
                     <Typography variant="body2" component="p">
