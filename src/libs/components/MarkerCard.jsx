@@ -9,6 +9,7 @@ import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 
 import dayjs from "dayjs";
+import FuelItem from './FuelItem';
 var relativeTime = require("dayjs/plugin/relativeTime");
 dayjs.extend(relativeTime, { rounding: Math.floor });
 
@@ -62,20 +63,8 @@ export default function MarkerCard({ gasStation }) {
                     Available Fuel Types
                 </Typography>
                 <Box ml={3}>
-                    <Typography variant="body2" component="p">
-                        Petrol <Checkbox
-                            checked={isPetrolAvailable}
-                            color="primary"
-                            inputProps={{ 'aria-label': 'secondary checkbox' }}
-                        />
-                    </Typography>
-                    <Typography variant="body2" component="p">
-                        Diesel<Checkbox
-                            checked={isDieselAvailable}
-                            color="primary"
-                            inputProps={{ 'aria-label': 'secondary checkbox' }}
-                        />
-                    </Typography>
+                    <FuelItem fuelName="Petrol" isAvailable={isPetrolAvailable}/>
+                    <FuelItem fuelName="Diesel" isAvailable={isDieselAvailable}/>
                 </Box>
             </Box>
             <CardActions>
