@@ -68,14 +68,14 @@ export default function HideAppBar(props) {
         Data source : <Link
           target="_blank"
           rel="noopener"
-          href={'https://github.com/nuuuwan/covid19/tree/data'}>
+          href={'https://home.knnect.com:9443/devportal/'}>
           GitHub
         </Link>
         {'    '}
         Source code : <Link
           target="_blank"
           rel="noopener"
-          href={'https://github.com/tmkasun/covid-19-dashboard/tree/main/'}>
+          href={'https://github.com/tmkasun/better-fuel-gov.lk'}>
           GitHub
         </Link>
       </Box>

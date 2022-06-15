@@ -1,5 +1,5 @@
-[Link](https://covid.knnect.com/)
+[Link](https://f.knnect.com/)
 
-# covid-19-dashboard
-![image](https://user-images.githubusercontent.com/3313885/131214119-5d29ec7c-ecf1-40c8-8714-b00204641897.png)
+# Better fuel availability view
+![image](https://user-images.githubusercontent.com/3313885/173895271-9eb88729-96f3-45c2-89f8-957b56cd2e46.png)
 
