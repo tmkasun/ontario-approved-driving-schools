@@ -88,58 +88,6 @@ const GasStationsMap = () => {
                 <Grid item xs={12} container spacing={3}>
                     <AreaSelect onLocationChange={setCurrentLocation} />
                 </Grid>
-
-                <Grid item xs={12}>
-                    <Box my={3} >
-                        <Typography variant="h6" component="h6">
-                            Show COVID-19 Vaccination Centers
-                        </Typography>
-                    </Box>
-                    <Box ml={3}>
-                        <FormControlLabel
-                            control={<Checkbox
-                                disabled={!haveVaccine}
-                                checked={showDose1}
-                                onChange={(e) => setShowDose1(e.target.checked)}
-                                color="primary"
-                                inputProps={{ 'aria-label': 'Dose 2' }}
-                                name="d1" />}
-                            label={<>1<sup>st</sup> Dose</>}
-                        />
-                    </Box>
-                    <Box ml={3}>
-                        <FormControlLabel
-                            control={<Checkbox
-                                disabled={!haveVaccine}
-                                checked={showDose2}
-                                onChange={(e) => setShowDose2(e.target.checked)}
-                                color="primary"
-                                inputProps={{ 'aria-label': 'Dose 2' }}
-                                name="d2" />}
-                            label={<>2<sup>nd</sup> Dose</>}
-                        />
-                    </Box>
-                    {!showDose1 && !showDose2 && "Select at least 1"}
-                </Grid>
-
-                <Grid item xs={12}>
-                    <Box my={3} >
-                        <Typography variant="h6" component="h6">
-                            Show Only Locations That
-                        </Typography>
-                    </Box>
-                    <Box ml={3}>
-                        <FormControlLabel
-                            control={<Checkbox
-                                checked={haveVaccine}
-                                onChange={(e) => setHaveVaccine(e.target.checked)}
-                                color="primary"
-                                inputProps={{ 'aria-label': 'Have vaccines' }}
-                                name="allvax" />}
-                            label={<>Have vaccines  available</>}
-                        />
-                    </Box>
-                </Grid>
                 <Grid
                     container
                     direction="row"
@@ -153,7 +101,7 @@ const GasStationsMap = () => {
                     </Grid>
                     <Grid item xs={12} sm={3}>
 
-                        <Box borderRadius={16} border={1} color="success.main" textAlign='center' display='block' mr={7}>
+                        <Box borderRadius={3} border={1} color="success.main" textAlign='center' display='block' mr={7}>
                             <Typography variant="subtitle2">
                                 <Box color="text.secondary" display='inline'> Found  </Box>{gasStations && gasStations.length}
                             </Typography>

@@ -51,15 +51,16 @@ export default function HideAppBar(props) {
         <AppBar variant="elevation">
           <Toolbar>
             <Typography sx={{flexGrow: 1}} variant="h6">
-              🇱🇰 Availability of petroleum products
+              🇱🇰 Fuel Availability 
+              <Typography variant="caption">
+              (Currently only support in sheds in Western province)
+              </Typography>
             </Typography>
           </Toolbar>
         </AppBar>
       </HideOnScroll>
       <Toolbar />
       <Box mt={1}>
-      <LastUpdated isLoading={isLoadingLatestVax} time={latestVax && latestVax.commit.committer.date} />
-
         {isLoading && <LinearProgress />}
         {children}
       </Box>
