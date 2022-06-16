@@ -11,9 +11,8 @@ import inComingLoad from './inComing.ico';
 //https://www.google.com/maps/dir/?api=1&travelmode=driving&layer=traffic&destination=[YOUR_LAT],[YOUR_LNG]
 // https://www.vaccines.gov/search/
 import Typography from '@mui/material/Typography';
+import { fetchFuelDetails } from '../../data/hooks/fuelData';
 
-const API_BASE = 'https://apis.knnect.com/api/v1';
-import dayjs from 'dayjs';
 import { useQuery } from 'react-query';
 import {
     getCityCode,
@@ -21,6 +20,8 @@ import {
     getProvinceCode,
 } from '../utils/geographyMap';
 import { styled } from '@mui/material';
+
+import dayjs from 'dayjs';
 var relativeTime = require('dayjs/plugin/relativeTime');
 dayjs.extend(relativeTime, { rounding: Math.floor });
 
@@ -174,30 +175,7 @@ const Img = styled('img')(({ isDispatched }) => {
     };
 });
 
-const fetchFuelDetails = async ({ queryKey }) => {
-    const [id, fuelType, provinceCode, cityCode, districtCode] = queryKey;
-    const payload = {
-        province: provinceCode,
-        district: districtCode,
-        fuelType,
-    };
-    if (cityCode !== -1) {
-        payload.city = cityCode;
-    }
-    const response = await fetch(`${API_BASE}/sheddetails/search`, {
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-        method: 'POST',
-    });
 
-    if (!response.ok) {
-        throw new Error('Unable to fetch data Check the APIM endpoint');
-    }
-    return response.json();
-};
 /*
 {
     bowserDispatch: false
@@ -240,7 +218,7 @@ export default function MarkerCard({ gasStation }) {
         data: p92Data,
         error: p92Error,
     } = useQuery(
-        [id, 'p92', provinceCode, cityCode, districtCode],
+        ['p92', provinceCode, cityCode, districtCode],
         fetchFuelDetails
     );
     const {
@@ -249,7 +227,7 @@ export default function MarkerCard({ gasStation }) {
         data: dData,
         error: dError,
     } = useQuery(
-        [id, 'd', provinceCode, cityCode, districtCode],
+        ['d', provinceCode, cityCode, districtCode],
         fetchFuelDetails
     );
 
