@@ -52,9 +52,6 @@ export default function HideAppBar(props) {
           <Toolbar>
             <Typography sx={{flexGrow: 1}} variant="h6">
               🇱🇰 Fuel Availability 
-              <Typography variant="caption">
-              (Currently only support in sheds in Western province)
-              </Typography>
             </Typography>
           </Toolbar>
         </AppBar>
