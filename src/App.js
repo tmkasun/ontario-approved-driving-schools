@@ -43,14 +43,8 @@ const SectionSeperator = () => (
  */
 
 const App = () => {
-    const [lineChartOptions, setLineChartOptions] = useState(null);
-    const [pieChartOptions, setPieChartOptions] = useState(null);
     const [dataType, setDataType] = useState("total");
-    const [gasStations, setGasStations] = useState(null);
     const [lastXDays, setLastXDays] = useState(0);
-    const [cumTotal, setCumTotal] = useState(null);
-    const [lastUpdated, setLastUpdated] = useState(null);
-    const [latestVax, latestVaxError, isLoadingLatestVax] = useLastCommit('covid19.epid.vaxs.latest.tsv');
 
     return (
         <Base

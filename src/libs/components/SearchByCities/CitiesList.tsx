@@ -13,11 +13,13 @@ import { Box, Divider, Skeleton, Typography } from '@mui/material';
 import inComingLoad from '../inComing.ico';
 
 import dayjs from 'dayjs';
+import useGasStations from '../../hooks/useGasStations';
 var relativeTime = require('dayjs/plugin/relativeTime');
 dayjs.extend(relativeTime, { rounding: Math.floor });
 
-export default function CitiesList({ selectedCity }: any) {
+export default function CitiesList({ selectedCity, setCurrentLocation }: any) {
     const { cityId, districtId, provinceId } = selectedCity;
+    const [allSheds, allShedsError, isLoadingAllSheds] = useGasStations();
 
     const {
         isError: isP92Error,
@@ -26,22 +28,42 @@ export default function CitiesList({ selectedCity }: any) {
         error: p92Error,
     } = useQuery(['p92', provinceId, cityId, districtId], searchFuelDetails);
     const {
+        isError: isP95Error,
+        isLoading: isP52Loading,
+        data: p95Data,
+        error: p95Error,
+    } = useQuery(['p95', provinceId, cityId, districtId], searchFuelDetails);
+    const {
         isError: isDError,
         isLoading: isDLoading,
         data: dData,
         error: dError,
     } = useQuery(['d', provinceId, cityId, districtId], searchFuelDetails);
     let allData = [];
-    if (dData && p92Data) {
+    if (dData && p92Data && p95Data) {
         for (const petrol92 of p92Data) {
             allData.push({
                 petrol92,
+                petrol95: p95Data.find(
+                    ({ shedId }: any) => shedId === petrol92.shedId
+                ),
                 diesel: dData.find(
                     ({ shedId }: any) => shedId === petrol92.shedId
                 ),
             });
         }
     }
+    const locateShed = (event: any) => {
+        const { id: currentID } = event.currentTarget;
+        const found = allSheds.find(({ id }: any) => id === Number(currentID));
+        if (found) {
+            const { latitude, longitude } = found;
+            setCurrentLocation({
+                coords: { latitude: longitude, longitude: latitude },
+                zoom: 17,
+            });
+        }
+    };
     return (
         <List
             sx={{
@@ -70,7 +92,11 @@ export default function CitiesList({ selectedCity }: any) {
                     )
                     .map((shed) => (
                         <>
-                            <ListItem>
+                            <ListItem
+                                onClick={locateShed}
+                                key={shed.petrol92.shedId}
+                                id={shed.petrol92.shedId}
+                            >
                                 <Box display="flex" flexDirection="column">
                                     <Box>
                                         <ListItemText
@@ -83,7 +109,7 @@ export default function CitiesList({ selectedCity }: any) {
                                     </Box>
 
                                     <Box>
-                                        Petrol
+                                        Petrol 92
                                         {shed.petrol92.bowserDispatch ? (
                                             <Box
                                                 display="inline"
@@ -114,7 +140,38 @@ export default function CitiesList({ selectedCity }: any) {
                                         )}
                                     </Box>
                                     <Box>
-                                        Diesel
+                                        Petrol 95
+                                        {shed.petrol95.bowserDispatch ? (
+                                            <Box
+                                                display="inline"
+                                                color="green"
+                                                ml={2}
+                                            >
+                                                <img
+                                                    width={60}
+                                                    src={inComingLoad}
+                                                />
+                                                ETA:{' '}
+                                                {dayjs().to(
+                                                    dayjs(
+                                                        shed.petrol95.eta.split(
+                                                            ','
+                                                        )[0]
+                                                    )
+                                                )}
+                                            </Box>
+                                        ) : (
+                                            <Box
+                                                display="inline"
+                                                color="red"
+                                                ml={2}
+                                            >
+                                                Not dispatched
+                                            </Box>
+                                        )}
+                                    </Box>
+                                    <Box>
+                                        Diesel (Normal)
                                         {shed.diesel.bowserDispatch ? (
                                             <Box
                                                 display="inline"

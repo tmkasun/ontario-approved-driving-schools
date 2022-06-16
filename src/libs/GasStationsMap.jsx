@@ -81,9 +81,6 @@ function ChangeView({ center, zoom }) {
 const GasStationsMap = () => {
     const [currentLocation, setCurrentLocation] = useState(null);
     const [gasStations, error, isLoading] = useGasStations();
-    const [showDose1, setShowDose1] = useState(true);
-    const [showDose2, setShowDose2] = useState(true);
-    const [haveVaccine, setHaveVaccine] = useState(true);
     const reset = () => {
         setShowDose1(true);
         setCurrentLocation(null);
@@ -93,7 +90,8 @@ const GasStationsMap = () => {
     const mapCenter = currentLocation
         ? [currentLocation.coords.latitude, currentLocation.coords.longitude]
         : [7.79, 80.91];
-    const zoom = currentLocation ? 13 : 8;
+    const { zoom: customZoom = 13 } = currentLocation || {};
+    const zoom = currentLocation && customZoom ? customZoom : 8;
     return (
         <Grid
             container
@@ -101,6 +99,18 @@ const GasStationsMap = () => {
             justifyContent="flex-end"
             alignItems="flex-start"
         >
+            {isLoading && (
+                <LinearProgress
+                    sx={{
+                        width: '100vw',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        zIndex: 1000000, // TODO: Fix this
+                    }}
+                />
+            )}
+
             <Grid
                 container
                 direction="row"
@@ -114,7 +124,6 @@ const GasStationsMap = () => {
                     <Typography variant="h4" component="h4" gutterBottom>
                         Search
                     </Typography>
-                    {isLoading && <LinearProgress />}
                 </Grid>
                 <Grid item xs={12} container spacing={3}>
                     <AreaSelect onLocationChange={setCurrentLocation} />
@@ -160,7 +169,9 @@ const GasStationsMap = () => {
                         Search By Cities
                     </Typography>
                     <Grid xs={12} item>
-                        <SearchByCities />
+                        <SearchByCities
+                            setCurrentLocation={setCurrentLocation}
+                        />
                     </Grid>
                 </Grid>
             </Grid>

@@ -5,12 +5,11 @@ import { Box } from '@mui/material';
 import { cities } from '../../../data/cities';
 import CitiesList from './CitiesList';
 
-export default function Grouped() {
+export default function Grouped({ setCurrentLocation }: any) {
     const [selectedCity, setSelectedCity] = React.useState(null);
 
-
     return (
-        <Box display="flex" flexDirection='column'>
+        <Box display="flex" flexDirection="column">
             <Box display="flex" width={1}>
                 <Autocomplete
                     id="grouped-cities"
@@ -29,9 +28,13 @@ export default function Grouped() {
                     )}
                 />
             </Box>
-
             <Box display="flex" width={1}>
-                {selectedCity && <CitiesList selectedCity={selectedCity} />}
+                {selectedCity && (
+                    <CitiesList
+                        setCurrentLocation={setCurrentLocation}
+                        selectedCity={selectedCity}
+                    />
+                )}
             </Box>
         </Box>
     );
