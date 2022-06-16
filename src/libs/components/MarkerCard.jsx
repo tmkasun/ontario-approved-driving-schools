@@ -11,7 +11,7 @@ import inComingLoad from './inComing.ico';
 //https://www.google.com/maps/dir/?api=1&travelmode=driving&layer=traffic&destination=[YOUR_LAT],[YOUR_LNG]
 // https://www.vaccines.gov/search/
 import Typography from '@mui/material/Typography';
-import { fetchFuelDetails } from '../../data/hooks/fuelData';
+import { fetchFuelDetails, API_BASE } from '../../data/hooks/fuelData';
 
 import { useQuery } from 'react-query';
 import {

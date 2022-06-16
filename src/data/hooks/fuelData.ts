@@ -1,4 +1,4 @@
-const API_BASE = 'https://apis.knnect.com/api/v1';
+export const API_BASE = 'https://apis.knnect.com/api/v1';
 
 export const fetchFuelDetails = async ({ queryKey }: any) => {
     const [fuelType, provinceCode, cityCode, districtCode] = queryKey;
