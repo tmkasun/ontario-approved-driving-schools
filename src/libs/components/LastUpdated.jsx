@@ -13,7 +13,7 @@ const LastUpdated = (props) => {
     const d = isUnix ? dayjs.unix(lastUpdated) : dayjs(lastUpdated)
     return (
         <Box my={0.5} mr={1} justifyContent="flex-end" display='flex' fontWeight="fontWeightMedium">
-            Last updated: <Tooltip title={lastUpdated && d.toString()}>
+            Last updated: <Tooltip title={(lastUpdated && d.toString()) || ''}>
                 <Chip style={{marginLeft: '4px'}} variant="outlined" label={isLoading ? 'Loading' : lastUpdated && dayjs().to(d)} color="primary" size="small" />
             </Tooltip>
         </Box>

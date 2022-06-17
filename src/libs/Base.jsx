@@ -10,9 +10,6 @@ import LinearProgress from "@mui/material/LinearProgress";
 import Slide from "@mui/material/Slide";
 import Link from '@mui/material/Link';
 
-import useLastCommit from './hooks/useLastCommit'
-import LastUpdated from './components/LastUpdated'
-
 function HideOnScroll(props) {
   const { children, window } = props;
   // Note that you normally won't need to set the window ref as useScrollTrigger
@@ -42,7 +39,6 @@ export default function HideAppBar(props) {
     isLoading,
     ...rest
   } = props;
-  const [latestVax, latestVaxError, isLoadingLatestVax] = useLastCommit('covid19.lk_vax_centers.latest.tsv');
 
   return (
     <>
@@ -51,15 +47,13 @@ export default function HideAppBar(props) {
         <AppBar variant="elevation">
           <Toolbar>
             <Typography sx={{flexGrow: 1}} variant="h6">
-              🇱🇰 Availability of petroleum products
+              🇱🇰 Fuel Availability 
             </Typography>
           </Toolbar>
         </AppBar>
       </HideOnScroll>
       <Toolbar />
       <Box mt={1}>
-      <LastUpdated isLoading={isLoadingLatestVax} time={latestVax && latestVax.commit.committer.date} />
-
         {isLoading && <LinearProgress />}
         {children}
       </Box>
@@ -67,14 +61,14 @@ export default function HideAppBar(props) {
         Data source : <Link
           target="_blank"
           rel="noopener"
-          href={'https://github.com/nuuuwan/covid19/tree/data'}>
+          href={'https://home.knnect.com:9443/devportal/'}>
           GitHub
         </Link>
         {'    '}
         Source code : <Link
           target="_blank"
           rel="noopener"
-          href={'https://github.com/tmkasun/covid-19-dashboard/tree/main/'}>
+          href={'https://github.com/tmkasun/better-fuel-gov.lk'}>
           GitHub
         </Link>
       </Box>
