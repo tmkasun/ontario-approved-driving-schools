@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 
 import DataController from "./libs/components/DataController"
 import LastUpdated from "./libs/components/LastUpdated"
-import useLastCommit from "./libs/hooks/useLastCommit";
 
 import LineChart from "./libs/LineChart";
 import PieChart from "./libs/PieChart";

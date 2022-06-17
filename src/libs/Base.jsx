@@ -10,9 +10,6 @@ import LinearProgress from "@mui/material/LinearProgress";
 import Slide from "@mui/material/Slide";
 import Link from '@mui/material/Link';
 
-import useLastCommit from './hooks/useLastCommit'
-import LastUpdated from './components/LastUpdated'
-
 function HideOnScroll(props) {
   const { children, window } = props;
   // Note that you normally won't need to set the window ref as useScrollTrigger
@@ -42,7 +39,6 @@ export default function HideAppBar(props) {
     isLoading,
     ...rest
   } = props;
-  const [latestVax, latestVaxError, isLoadingLatestVax] = useLastCommit('covid19.lk_vax_centers.latest.tsv');
 
   return (
     <>
