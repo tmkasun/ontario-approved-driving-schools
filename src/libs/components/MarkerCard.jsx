@@ -198,7 +198,6 @@ export default function MarkerCard({ gasStation }) {
     const provinceCode = getProvinceCode(province);
     const districtCode = getDistrictCode(district);
     const cityCode = getCityCode(city);
-
     // https://fuel.gov.lk/api/v1/sheddetails/1122
     const {
         isError: isShedError,

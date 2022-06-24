@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
@@ -17,49 +17,28 @@ import SearchByCities from './components/SearchByCities/SearchByCities';
 import './css/map.css';
 import 'leaflet/dist/leaflet.css';
 
-const getMarker = (gasStation) => {
-    const {
-        id,
-        province,
-        district,
-        city,
-        lane,
-        longitude,
-        latitude,
-        phoneNumber,
-        shedName,
-        fuelAvailabilityDTO,
-        instituteId,
-        p92Availablity,
-        p95Availablity,
-        davailablity,
-        sdavailablity,
-        ikavailablity,
-        kavailablity,
-        p92Capacity,
-        p95Capacity,
-        dcapacity,
-        sdcapacity,
-        ikcapacity,
-        kcapacity,
-        shedCode,
-    } = gasStation;
-    const isPetrolAvailable = davailablity || sdavailablity;
-    const isDieselAvailable = p92Availablity || p95Availablity;
+const getMarker = (shedType) => {
+    const pinClass = 'pin-oneavailable';
+    const pinEffectClass = 'pin-oneavailable-effect';
 
-    let pinClass = 'pin-oneavailable';
-    let pinEffectClass = 'pin-oneavailable-effect';
-
-    if (!(isPetrolAvailable || isDieselAvailable)) {
-        pinClass = 'pin-notavailable';
-        pinEffectClass = 'pin-notavailable-effect';
-    } else if (isPetrolAvailable && isDieselAvailable) {
-        pinClass = 'pin';
-        pinEffectClass = 'pin-effect';
+    switch (shedType) {
+        case 1:
+            return new L.icon({
+                iconUrl: 'mapIcons/cepetco.png',
+                iconSize: [30, 30], // size of the icon
+                className: 'logoGlow',
+            });
+        case 2:
+            return new L.icon({
+                iconUrl: 'mapIcons/ioc.png',
+                iconSize: [30, 30], // size of the icon
+                className: 'logoGlow',
+            });
+        default:
+            return new L.divIcon({
+                html: `<div class="${pinClass}"></div> <div class="${pinEffectClass}"></div>`,
+            });
     }
-    return new L.divIcon({
-        html: `<div class="${pinClass}"></div> <div class="${pinEffectClass}"></div>`,
-    });
 };
 
 const searchedLocationMarker = new L.icon({
@@ -80,12 +59,15 @@ function ChangeView({ center, zoom }) {
 
 const GasStationsMap = () => {
     const [currentLocation, setCurrentLocation] = useState(null);
-    const [gasStations, error, isLoading] = useGasStations();
+    const [gasStationsMap, error, isLoading] = useGasStations();
+    const gasStations = useMemo(
+        () =>
+            gasStationsMap ? Object.entries(gasStationsMap) : gasStationsMap,
+        [gasStationsMap]
+    );
+
     const reset = () => {
-        setShowDose1(true);
         setCurrentLocation(null);
-        setShowDose2(true);
-        setHaveVaccine(true);
     };
     const mapCenter = currentLocation
         ? [currentLocation.coords.latitude, currentLocation.coords.longitude]
@@ -119,15 +101,6 @@ const GasStationsMap = () => {
                 sm={3}
                 item
             >
-                <Box my={4} />
-                <Grid item xs={12}>
-                    <Typography variant="h4" component="h4" gutterBottom>
-                        Search
-                    </Typography>
-                </Grid>
-                <Grid item xs={12} container spacing={3}>
-                    <AreaSelect onLocationChange={setCurrentLocation} />
-                </Grid>
                 <Grid
                     container
                     direction="row"
@@ -136,42 +109,29 @@ const GasStationsMap = () => {
                     item
                     xs={12}
                 >
-                    <Grid item xs={12} sm={6}>
-                        <Box my={3}>
-                            <Button
-                                style={{ color: '#a20000' }}
-                                onClick={reset}
-                            >
-                                RESET
-                            </Button>
-                        </Box>
-                    </Grid>
-                    <Grid item xs={12} sm={3}>
-                        <Box
-                            borderRadius={3}
-                            border={1}
-                            color="success.main"
-                            textAlign="center"
-                            display="block"
-                            mr={7}
-                        >
-                            <Typography variant="subtitle2">
-                                <Box color="text.secondary" display="inline">
-                                    {' '}
-                                    Found{' '}
-                                </Box>
-                                {gasStations && gasStations.length}
-                            </Typography>
-                        </Box>
-                    </Grid>
-
-                    <Typography variant="subtitle2">
-                        Search By Cities
-                    </Typography>
                     <Grid xs={12} item>
                         <SearchByCities
                             setCurrentLocation={setCurrentLocation}
                         />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <Button style={{ color: '#a20000' }} onClick={reset}>
+                            RESET
+                        </Button>
+                    </Grid>
+                    <Grid item xs={12} sm={3}>
+                        <Box color="success.main" textAlign="center">
+                            <Typography variant="subtitle2">
+                                <Box
+                                    color="text.secondary"
+                                    mr={1}
+                                    display="inline"
+                                >
+                                    Total
+                                </Box>
+                                {gasStations && gasStations.length}
+                            </Typography>
+                        </Box>
                     </Grid>
                 </Grid>
             </Grid>
@@ -195,43 +155,22 @@ const GasStationsMap = () => {
                         />
                         <MarkerClusterGroup>
                             {gasStations &&
-                                gasStations.map((gasStation) => {
-                                    const {
-                                        id,
-                                        province,
-                                        district,
-                                        city,
-                                        lane,
-                                        longitude,
-                                        latitude,
-                                        phoneNumber,
-                                        shedName,
-                                        fuelAvailabilityDTO,
-                                        instituteId,
-                                        p92Availablity,
-                                        p95Availablity,
-                                        davailablity,
-                                        sdavailablity,
-                                        ikavailablity,
-                                        kavailablity,
-                                        p92Capacity,
-                                        p95Capacity,
-                                        dcapacity,
-                                        sdcapacity,
-                                        ikcapacity,
-                                        kcapacity,
-                                        shedCode,
-                                    } = gasStation;
+                                gasStations.map(([shedId, gasStation]) => {
+                                    const { p92Data: gasStationP92, shedType } =
+                                        gasStation;
+                                    const { id, longitude, latitude } =
+                                        gasStationP92;
                                     const position = [longitude, latitude];
+                                    debugger;
                                     return (
                                         <Marker
-                                            key={id}
-                                            icon={getMarker(gasStation)}
+                                            key={shedId}
+                                            icon={getMarker(shedType)}
                                             position={position}
                                         >
                                             <Popup>
                                                 <MarkerCard
-                                                    gasStation={gasStation}
+                                                    gasStation={gasStationP92}
                                                 />
                                             </Popup>
                                         </Marker>

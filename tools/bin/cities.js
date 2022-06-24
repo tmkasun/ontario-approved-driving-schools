@@ -1,2319 +1,3206 @@
-export const allCities = [{
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+export const allCities = [
+    {
         id: 1,
-        provinceId: "4",
-        name: "Central",
-        district: [{
-                districtId: "7",
-                name: "Kandy",
-                cities: [{
+        provinceId: '4',
+        name: 'Central',
+        district: [
+            {
+                districtId: '7',
+                name: 'Kandy',
+                cities: [
+                    {
                         cityId: 10,
-                        name: "Akurana"
-                    }, {
+                        name: 'Akurana',
+                    },
+                    {
                         cityId: 13,
-                        name: "Aladeniya"
-                    }, {
+                        name: 'Aladeniya',
+                    },
+                    {
                         cityId: 15,
-                        name: "Alawatugoda"
-                    }, {
+                        name: 'Alawatugoda',
+                    },
+                    {
                         cityId: 33,
-                        name: "Ankubura"
-                    }, {
+                        name: 'Ankubura',
+                    },
+                    {
                         cityId: 92,
-                        name: "Bokkawala"
-                    }, {
+                        name: 'Bokkawala',
+                    },
+                    {
                         cityId: 153,
-                        name: "Delpitiya"
-                    }, {
+                        name: 'Delpitiya',
+                    },
+                    {
                         cityId: 154,
-                        name: "Deltota"
-                    }, {
+                        name: 'Deltota',
+                    },
+                    {
                         cityId: 192,
-                        name: "Galagedara"
-                    }, {
+                        name: 'Galagedara',
+                    },
+                    {
                         cityId: 194,
-                        name: "Galaha"
-                    }, {
+                        name: 'Galaha',
+                    },
+                    {
                         cityId: 209,
-                        name: "Gampola"
-                    }, {
+                        name: 'Gampola',
+                    },
+                    {
                         cityId: 229,
-                        name: "Gurudeniya - Gelioya"
-                    }, {
+                        name: 'Gurudeniya - Gelioya',
+                    },
+                    {
                         cityId: 239,
-                        name: "Hasalaka"
-                    }, {
+                        name: 'Hasalaka',
+                    },
+                    {
                         cityId: 240,
-                        name: "Hataraliyadda"
-                    }, {
+                        name: 'Hataraliyadda',
+                    },
+                    {
                         cityId: 265,
-                        name: "Hunnasgiriya"
-                    }, {
+                        name: 'Hunnasgiriya',
+                    },
+                    {
                         cityId: 286,
-                        name: "Kadugannawa"
-                    }, {
+                        name: 'Kadugannawa',
+                    },
+                    {
                         cityId: 327,
-                        name: "Kandy"
-                    }, {
+                        name: 'Kandy',
+                    },
+                    {
                         cityId: 333,
-                        name: "Karaliyedde"
-                    }, {
+                        name: 'Karaliyedde',
+                    },
+                    {
                         cityId: 342,
-                        name: "Katugasthota"
-                    }, {
+                        name: 'Katugasthota',
+                    },
+                    {
                         cityId: 360,
-                        name: "Kengalla"
-                    }, {
+                        name: 'Kengalla',
+                    },
+                    {
                         cityId: 409,
-                        name: "Kundasale"
-                    }, {
+                        name: 'Kundasale',
+                    },
+                    {
                         cityId: 423,
-                        name: "Madawala"
-                    }, {
+                        name: 'Madawala',
+                    },
+                    {
                         cityId: 441,
-                        name: "Mailapitiya"
-                    }, {
+                        name: 'Mailapitiya',
+                    },
+                    {
                         cityId: 493,
-                        name: "Menikhinna"
-                    }, {
+                        name: 'Menikhinna',
+                    },
+                    {
                         cityId: 552,
-                        name: "Nawalapitiya"
-                    }, {
+                        name: 'Nawalapitiya',
+                    },
+                    {
                         cityId: 587,
-                        name: "Nugawela"
-                    }, {
+                        name: 'Nugawela',
+                    },
+                    {
                         cityId: 622,
-                        name: "Panwila"
-                    }, {
+                        name: 'Panwila',
+                    },
+                    {
                         cityId: 634,
-                        name: "Peradeniya"
-                    }, {
+                        name: 'Peradeniya',
+                    },
+                    {
                         cityId: 641,
-                        name: "Pilimathalawa"
-                    }, {
+                        name: 'Pilimathalawa',
+                    },
+                    {
                         cityId: 668,
-                        name: "Pujapitiya"
-                    }, {
+                        name: 'Pujapitiya',
+                    },
+                    {
                         cityId: 678,
-                        name: "Pussellawa"
-                    }, {
+                        name: 'Pussellawa',
+                    },
+                    {
                         cityId: 688,
-                        name: "Rajawella"
-                    }, {
+                        name: 'Rajawella',
+                    },
+                    {
                         cityId: 703,
-                        name: "Rikillagaskada"
-                    }, {
+                        name: 'Rikillagaskada',
+                    },
+                    {
                         cityId: 735,
-                        name: "Talatuoya"
-                    }, {
+                        name: 'Talatuoya',
+                    },
+                    {
                         cityId: 744,
-                        name: "Teldeniya"
-                    }, {
+                        name: 'Teldeniya',
+                    },
+                    {
                         cityId: 746,
-                        name: "Tennekumbura"
-                    }, {
+                        name: 'Tennekumbura',
+                    },
+                    {
                         cityId: 750,
-                        name: "Thalakiriyagama"
-                    }, {
+                        name: 'Thalakiriyagama',
+                    },
+                    {
                         cityId: 784,
-                        name: "Udatenna - Medamaha Nuwara"
-                    }, {
+                        name: 'Udatenna - Medamaha Nuwara',
+                    },
+                    {
                         cityId: 786,
-                        name: "Ududumbara"
-                    }, {
+                        name: 'Ududumbara',
+                    },
+                    {
                         cityId: 837,
-                        name: "Wattegama"
-                    }, {
+                        name: 'Wattegama',
+                    },
+                    {
                         cityId: 846,
-                        name: "Weligalla"
-                    }, {
+                        name: 'Weligalla',
+                    },
+                    {
                         cityId: 868,
-                        name: "Werellagama"
-                    }, {
+                        name: 'Werellagama',
+                    },
+                    {
                         cityId: 881,
-                        name: "Ambathanna"
-                    }]
-            }, {
-                districtId: "10",
-                name: "Matale",
-                cities: [{
+                        name: 'Ambathanna',
+                    },
+                ],
+            },
+            {
+                districtId: '10',
+                name: 'Matale',
+                cities: [
+                    {
                         cityId: 143,
-                        name: "Dambulla"
-                    }, {
+                        name: 'Dambulla',
+                    },
+                    {
                         cityId: 159,
-                        name: "Devahuwa"
-                    }, {
+                        name: 'Devahuwa',
+                    },
+                    {
                         cityId: 197,
-                        name: "Galewela"
-                    }, {
+                        name: 'Galewela',
+                    },
+                    {
                         cityId: 273,
-                        name: "Inamaluwa"
-                    }, {
+                        name: 'Inamaluwa',
+                    },
+                    {
                         cityId: 467,
-                        name: "Matale"
-                    }, {
+                        name: 'Matale',
+                    },
+                    {
                         cityId: 548,
-                        name: "Naula"
-                    }, {
+                        name: 'Naula',
+                    },
+                    {
                         cityId: 558,
-                        name: "Neelagama"
-                    }, {
+                        name: 'Neelagama',
+                    },
+                    {
                         cityId: 603,
-                        name: "Palapathwala"
-                    }, {
+                        name: 'Palapathwala',
+                    },
+                    {
                         cityId: 606,
-                        name: "Pallepola"
-                    }, {
+                        name: 'Pallepola',
+                    },
+                    {
                         cityId: 700,
-                        name: "Rattota"
-                    }, {
+                        name: 'Rattota',
+                    },
+                    {
                         cityId: 793,
-                        name: "Ukuwela"
-                    }, {
+                        name: 'Ukuwela',
+                    },
+                    {
                         cityId: 870,
-                        name: "Wilgamuwa"
-                    }, {
+                        name: 'Wilgamuwa',
+                    },
+                    {
                         cityId: 878,
-                        name: "Yatawatta"
-                    }]
-            }, {
-                districtId: "11",
-                name: "Nuwara Eliya",
-                cities: [{
+                        name: 'Yatawatta',
+                    },
+                ],
+            },
+            {
+                districtId: '11',
+                name: 'Nuwara Eliya',
+                cities: [
+                    {
                         cityId: 215,
-                        name: "Ginigathena"
-                    }, {
+                        name: 'Ginigathena',
+                    },
+                    {
                         cityId: 236,
-                        name: "Hanguranketa"
-                    }, {
+                        name: 'Hanguranketa',
+                    },
+                    {
                         cityId: 241,
-                        name: "Hatton"
-                    }, {
+                        name: 'Hatton',
+                    },
+                    {
                         cityId: 325,
-                        name: "Kandapola"
-                    }, {
+                        name: 'Kandapola',
+                    },
+                    {
                         cityId: 353,
-                        name: "Keertibandarapura"
-                    }, {
+                        name: 'Keertibandarapura',
+                    },
+                    {
                         cityId: 394,
-                        name: "Kotagala"
-                    }, {
+                        name: 'Kotagala',
+                    },
+                    {
                         cityId: 465,
-                        name: "Maskeliya"
-                    }, {
+                        name: 'Maskeliya',
+                    },
+                    {
                         cityId: 541,
-                        name: "Nanu Oya"
-                    }, {
+                        name: 'Nanu Oya',
+                    },
+                    {
                         cityId: 584,
-                        name: "Nortonbridge"
-                    }, {
+                        name: 'Nortonbridge',
+                    },
+                    {
                         cityId: 585,
-                        name: "Norwood"
-                    }, {
+                        name: 'Norwood',
+                    },
+                    {
                         cityId: 590,
-                        name: "Nuwara Eliya"
-                    }, {
+                        name: 'Nuwara Eliya',
+                    },
+                    {
                         cityId: 598,
-                        name: "Padiyapelella"
-                    }, {
+                        name: 'Padiyapelella',
+                    },
+                    {
                         cityId: 674,
-                        name: "Pundaluoya"
-                    }, {
+                        name: 'Pundaluoya',
+                    },
+                    {
                         cityId: 684,
-                        name: "Ragala"
-                    }, {
+                        name: 'Ragala',
+                    },
+                    {
                         cityId: 737,
-                        name: "Talawakele"
-                    }, {
+                        name: 'Talawakele',
+                    },
+                    {
                         cityId: 743,
-                        name: "Tawalantenna"
-                    }, {
+                        name: 'Tawalantenna',
+                    },
+                    {
                         cityId: 789,
-                        name: "Udupussellawa"
-                    }, {
+                        name: 'Udupussellawa',
+                    },
+                    {
                         cityId: 836,
-                        name: "Wattawala"
-                    }]
-            }]
-    }, {
+                        name: 'Wattawala',
+                    },
+                ],
+            },
+        ],
+    },
+    {
         id: 2,
-        provinceId: "8",
-        name: "Eastern",
-        district: [{
-                districtId: "12",
-                name: "Batticaloa",
-                cities: [{
+        provinceId: '8',
+        name: 'Eastern',
+        district: [
+            {
+                districtId: '12',
+                name: 'Batticaloa',
+                cities: [
+                    {
                         cityId: 40,
-                        name: "Arasaditivu - Kokkaddicholai"
-                    }, {
+                        name: 'Arasaditivu - Kokkaddicholai',
+                    },
+                    {
                         cityId: 381,
-                        name: "Kokkaddichcholai"
-                    }, {
+                        name: 'Kokkaddichcholai',
+                    },
+                    {
                         cityId: 41,
-                        name: "Arayampathy"
-                    }, {
+                        name: 'Arayampathy',
+                    },
+                    {
                         cityId: 74,
-                        name: "Batticaloa"
-                    }, {
+                        name: 'Batticaloa',
+                    },
+                    {
                         cityId: 110,
-                        name: "Chenkaladi"
-                    }, {
+                        name: 'Chenkaladi',
+                    },
+                    {
                         cityId: 189,
-                        name: "Eravur"
-                    }, {
+                        name: 'Eravur',
+                    },
+                    {
                         cityId: 302,
-                        name: "Kalawanchikudy"
-                    }, {
+                        name: 'Kalawanchikudy',
+                    },
+                    {
                         cityId: 313,
-                        name: "Kaluwankarni"
-                    }, {
+                        name: 'Kaluwankarni',
+                    },
+                    {
                         cityId: 340,
-                        name: "Kattankudy"
-                    }, {
+                        name: 'Kattankudy',
+                    },
+                    {
                         cityId: 370,
-                        name: "Kirankulam"
-                    }, {
+                        name: 'Kirankulam',
+                    },
+                    {
                         cityId: 411,
-                        name: "Kurukkalmadam"
-                    }, {
+                        name: 'Kurukkalmadam',
+                    },
+                    {
                         cityId: 442,
-                        name: "Main Street - Valachchenai"
-                    }, {
+                        name: 'Main Street - Valachchenai',
+                    },
+                    {
                         cityId: 804,
-                        name: "Valachchenai - Oddamawadi"
-                    }, {
+                        name: 'Valachchenai - Oddamawadi',
+                    },
+                    {
                         cityId: 803,
-                        name: "Valachchenai"
-                    }, {
+                        name: 'Valachchenai',
+                    },
+                    {
                         cityId: 453,
-                        name: "Mandoor - Palamunai"
-                    }, {
+                        name: 'Mandoor - Palamunai',
+                    },
+                    {
                         cityId: 636,
-                        name: "Periyakallar"
-                    }, {
+                        name: 'Periyakallar',
+                    },
+                    {
                         cityId: 637,
-                        name: "Periyaporathvu"
-                    }, {
+                        name: 'Periyaporathvu',
+                    },
+                    {
                         cityId: 701,
-                        name: "Rideetenna"
-                    }, {
+                        name: 'Rideetenna',
+                    },
+                    {
                         cityId: 752,
-                        name: "Thalankuda"
-                    }, {
+                        name: 'Thalankuda',
+                    },
+                    {
                         cityId: 759,
-                        name: "Thiavaddavan - Oddamavadi"
-                    }, {
+                        name: 'Thiavaddavan - Oddamavadi',
+                    },
+                    {
                         cityId: 802,
-                        name: "Vakarai"
-                    }, {
+                        name: 'Vakarai',
+                    },
+                    {
                         cityId: 812,
-                        name: "Vellavely"
-                    }]
-            }, {
-                districtId: "13",
-                name: "Ampara",
-                cities: [{
+                        name: 'Vellavely',
+                    },
+                ],
+            },
+            {
+                districtId: '13',
+                name: 'Ampara',
+                cities: [
+                    {
                         cityId: 1,
-                        name: "Addalachchenai"
-                    }, {
+                        name: 'Addalachchenai',
+                    },
+                    {
                         cityId: 6,
-                        name: "Akkaraipattu"
-                    }, {
+                        name: 'Akkaraipattu',
+                    },
+                    {
                         cityId: 17,
-                        name: "Alayadivembu"
-                    }, {
+                        name: 'Alayadivembu',
+                    },
+                    {
                         cityId: 28,
-                        name: "Ampara"
-                    }, {
+                        name: 'Ampara',
+                    },
+                    {
                         cityId: 108,
-                        name: "Chawalakadai"
-                    }, {
+                        name: 'Chawalakadai',
+                    },
+                    {
                         cityId: 147,
-                        name: "Dehiatthakandiya"
-                    }, {
+                        name: 'Dehiatthakandiya',
+                    },
+                    {
                         cityId: 150,
-                        name: "Deiattakandiya"
-                    }, {
+                        name: 'Deiattakandiya',
+                    },
+                    {
                         cityId: 252,
-                        name: "Hingurana"
-                    }, {
+                        name: 'Hingurana',
+                    },
+                    {
                         cityId: 276,
-                        name: "Irakkamam"
-                    }, {
+                        name: 'Irakkamam',
+                    },
+                    {
                         cityId: 303,
-                        name: "Kalmunai"
-                    }, {
+                        name: 'Kalmunai',
+                    },
+                    {
                         cityId: 305,
-                        name: "Kalmunaikudy - 14"
-                    }, {
+                        name: 'Kalmunaikudy - 14',
+                    },
+                    {
                         cityId: 332,
-                        name: "Karaitivu - Ep"
-                    }, {
+                        name: 'Karaitivu - Ep',
+                    },
+                    {
                         cityId: 429,
-                        name: "Maha Oya"
-                    }, {
+                        name: 'Maha Oya',
+                    },
+                    {
                         cityId: 578,
-                        name: "Nintavur"
-                    }, {
+                        name: 'Nintavur',
+                    },
+                    {
                         cityId: 592,
-                        name: "Oluvil"
-                    }, {
+                        name: 'Oluvil',
+                    },
+                    {
                         cityId: 599,
-                        name: "Padiyatalawa"
-                    }, {
+                        name: 'Padiyatalawa',
+                    },
+                    {
                         cityId: 662,
-                        name: "Pottuvil"
-                    }, {
+                        name: 'Pottuvil',
+                    },
+                    {
                         cityId: 705,
-                        name: "Sainthamaruthu"
-                    }, {
+                        name: 'Sainthamaruthu',
+                    },
+                    {
                         cityId: 708,
-                        name: "Samanthurai"
-                    }, {
+                        name: 'Samanthurai',
+                    },
+                    {
                         cityId: 711,
-                        name: "Sandunpura"
-                    }, {
+                        name: 'Sandunpura',
+                    },
+                    {
                         cityId: 774,
-                        name: "Tirukkovil"
-                    }, {
+                        name: 'Tirukkovil',
+                    },
+                    {
                         cityId: 792,
-                        name: "Uhana"
-                    }]
-            }, {
-                districtId: "14",
-                name: "Trincomalee",
-                cities: [{
+                        name: 'Uhana',
+                    },
+                ],
+            },
+            {
+                districtId: '14',
+                name: 'Trincomalee',
+                cities: [
+                    {
                         cityId: 214,
-                        name: "Gantalawa"
-                    }, {
+                        name: 'Gantalawa',
+                    },
+                    {
                         cityId: 225,
-                        name: "Gomarankadawela"
-                    }, {
+                        name: 'Gomarankadawela',
+                    },
+                    {
                         cityId: 330,
-                        name: "Kantale"
-                    }, {
+                        name: 'Kantale',
+                    },
+                    {
                         cityId: 367,
-                        name: "Kinniya"
-                    }, {
+                        name: 'Kinniya',
+                    },
+                    {
                         cityId: 402,
-                        name: "Kuchchiveli"
-                    }, {
+                        name: 'Kuchchiveli',
+                    },
+                    {
                         cityId: 512,
-                        name: "Morawewa"
-                    }, {
+                        name: 'Morawewa',
+                    },
+                    {
                         cityId: 527,
-                        name: "Mutur"
-                    }, {
+                        name: 'Mutur',
+                    },
+                    {
                         cityId: 573,
-                        name: "Nilaveli"
-                    }, {
+                        name: 'Nilaveli',
+                    },
+                    {
                         cityId: 574,
-                        name: "Nilaveli - Irrakkandy"
-                    }, {
+                        name: 'Nilaveli - Irrakkandy',
+                    },
+                    {
                         cityId: 671,
-                        name: "Pulmoddai"
-                    }, {
+                        name: 'Pulmoddai',
+                    },
+                    {
                         cityId: 715,
-                        name: "Serunuwara"
-                    }, {
+                        name: 'Serunuwara',
+                    },
+                    {
                         cityId: 719,
-                        name: "Sinna Kinniya"
-                    }, {
+                        name: 'Sinna Kinniya',
+                    },
+                    {
                         cityId: 722,
-                        name: "Siripura"
-                    }, {
+                        name: 'Siripura',
+                    },
+                    {
                         cityId: 780,
-                        name: "Trincomalee"
-                    }]
-            }]
-    }, {
+                        name: 'Trincomalee',
+                    },
+                ],
+            },
+        ],
+    },
+    {
         id: 3,
-        provinceId: "6",
-        name: "Northern",
-        district: [{
-                districtId: "17",
-                name: "Jaffna",
-                cities: [{
+        provinceId: '6',
+        name: 'Northern',
+        district: [
+            {
+                districtId: '17',
+                name: 'Jaffna',
+                cities: [
+                    {
                         cityId: 14,
-                        name: "Alaveddy"
-                    }, {
+                        name: 'Alaveddy',
+                    },
+                    {
                         cityId: 45,
-                        name: "Atchuvely"
-                    }, {
+                        name: 'Atchuvely',
+                    },
+                    {
                         cityId: 106,
-                        name: "Chankanai"
-                    }, {
+                        name: 'Chankanai',
+                    },
+                    {
                         cityId: 107,
-                        name: "Chavakachcheri"
-                    }, {
+                        name: 'Chavakachcheri',
+                    },
+                    {
                         cityId: 114,
-                        name: "Chunnakam"
-                    }, {
+                        name: 'Chunnakam',
+                    },
+                    {
                         cityId: 281,
-                        name: "Jaffna"
-                    }, {
+                        name: 'Jaffna',
+                    },
+                    {
                         cityId: 293,
-                        name: "Kaithady"
-                    }, {
+                        name: 'Kaithady',
+                    },
+                    {
                         cityId: 331,
-                        name: "Karainagar"
-                    }, {
+                        name: 'Karainagar',
+                    },
+                    {
                         cityId: 351,
-                        name: "Kayts"
-                    }, {
+                        name: 'Kayts',
+                    },
+                    {
                         cityId: 379,
-                        name: "Kodikamam"
-                    }, {
+                        name: 'Kodikamam',
+                    },
+                    {
                         cityId: 383,
-                        name: "Kokuvil"
-                    }, {
+                        name: 'Kokuvil',
+                    },
+                    {
                         cityId: 385,
-                        name: "Kopay"
-                    }, {
+                        name: 'Kopay',
+                    },
+                    {
                         cityId: 408,
-                        name: "Kuncharkadai"
-                    }, {
+                        name: 'Kuncharkadai',
+                    },
+                    {
                         cityId: 447,
-                        name: "Mallakam"
-                    }, {
+                        name: 'Mallakam',
+                    },
+                    {
                         cityId: 454,
-                        name: "Manipay"
-                    }, {
+                        name: 'Manipay',
+                    },
+                    {
                         cityId: 457,
-                        name: "Manthikai"
-                    }, {
+                        name: 'Manthikai',
+                    },
+                    {
                         cityId: 464,
-                        name: "Maruthanarmadam"
-                    }, {
+                        name: 'Maruthanarmadam',
+                    },
+                    {
                         cityId: 471,
-                        name: "Mathagal"
-                    }, {
+                        name: 'Mathagal',
+                    },
+                    {
                         cityId: 528,
-                        name: "Myliddy"
-                    }, {
+                        name: 'Myliddy',
+                    },
+                    {
                         cityId: 536,
-                        name: "Nallur"
-                    }, {
+                        name: 'Nallur',
+                    },
+                    {
                         cityId: 566,
-                        name: "Nelliady"
-                    }, {
+                        name: 'Nelliady',
+                    },
+                    {
                         cityId: 614,
-                        name: "Pandatharippu"
-                    }, {
+                        name: 'Pandatharippu',
+                    },
+                    {
                         cityId: 672,
-                        name: "Puloly"
-                    }, {
+                        name: 'Puloly',
+                    },
+                    {
                         cityId: 675,
-                        name: "Punkudutivu"
-                    }, {
+                        name: 'Punkudutivu',
+                    },
+                    {
                         cityId: 676,
-                        name: "Punnalaikaduvan"
-                    }, {
+                        name: 'Punnalaikaduvan',
+                    },
+                    {
                         cityId: 681,
-                        name: "Puttur"
-                    }, {
+                        name: 'Puttur',
+                    },
+                    {
                         cityId: 710,
-                        name: "Sandilipay"
-                    }, {
+                        name: 'Sandilipay',
+                    },
+                    {
                         cityId: 725,
-                        name: "Siruppiddy"
-                    }, {
+                        name: 'Siruppiddy',
+                    },
+                    {
                         cityId: 738,
-                        name: "Talayadi"
-                    }, {
+                        name: 'Talayadi',
+                    },
+                    {
                         cityId: 745,
-                        name: "Tellippalai"
-                    }, {
+                        name: 'Tellippalai',
+                    },
+                    {
                         cityId: 765,
-                        name: "Thirunelveli"
-                    }, {
+                        name: 'Thirunelveli',
+                    },
+                    {
                         cityId: 790,
-                        name: "Uduvil"
-                    }, {
+                        name: 'Uduvil',
+                    },
+                    {
                         cityId: 800,
-                        name: "Urumpirai"
-                    }, {
+                        name: 'Urumpirai',
+                    },
+                    {
                         cityId: 805,
-                        name: "Valvettithurai"
-                    }, {
+                        name: 'Valvettithurai',
+                    },
+                    {
                         cityId: 811,
-                        name: "Velanai"
-                    }]
-            }, {
-                districtId: "18",
-                name: "Mannar",
-                cities: [{
+                        name: 'Velanai',
+                    },
+                ],
+            },
+            {
+                districtId: '18',
+                name: 'Mannar',
+                cities: [
+                    {
                         cityId: 456,
-                        name: "Mannar"
-                    }, {
+                        name: 'Mannar',
+                    },
+                    {
                         cityId: 524,
-                        name: "Murungan"
-                    }, {
+                        name: 'Murungan',
+                    },
+                    {
                         cityId: 539,
-                        name: "Nanattan"
-                    }, {
+                        name: 'Nanattan',
+                    },
+                    {
                         cityId: 718,
-                        name: "Silawattura"
-                    }, {
+                        name: 'Silawattura',
+                    },
+                    {
                         cityId: 724,
-                        name: "Siritoppu"
-                    }, {
+                        name: 'Siritoppu',
+                    },
+                    {
                         cityId: 734,
-                        name: "Thalaimannar Pier"
-                    }, {
+                        name: 'Thalaimannar Pier',
+                    },
+                    {
                         cityId: 749,
-                        name: "Thalaimannar"
-                    }, {
+                        name: 'Thalaimannar',
+                    },
+                    {
                         cityId: 757,
-                        name: "Tharapuram"
-                    }]
-            }, {
-                districtId: "19",
-                name: "Mulalativu",
-                cities: [{
+                        name: 'Tharapuram',
+                    },
+                ],
+            },
+            {
+                districtId: '19',
+                name: 'Mulalativu',
+                cities: [
+                    {
                         cityId: 448,
-                        name: "Mallavi"
-                    }, {
+                        name: 'Mallavi',
+                    },
+                    {
                         cityId: 772,
-                        name: "Thunnukai - Mallavi"
-                    }, {
+                        name: 'Thunnukai - Mallavi',
+                    },
+                    {
                         cityId: 455,
-                        name: "Mankulam"
-                    }, {
+                        name: 'Mankulam',
+                    },
+                    {
                         cityId: 518,
-                        name: "Mulattivu"
-                    }, {
+                        name: 'Mulattivu',
+                    },
+                    {
                         cityId: 521,
-                        name: "Mulliyawalai"
-                    }, {
+                        name: 'Mulliyawalai',
+                    },
+                    {
                         cityId: 554,
-                        name: "Nayaru"
-                    }, {
+                        name: 'Nayaru',
+                    },
+                    {
                         cityId: 591,
-                        name: "Oddusuddan"
-                    }, {
+                        name: 'Oddusuddan',
+                    },
+                    {
                         cityId: 679,
-                        name: "Puthukudiyiruppu"
-                    }, {
+                        name: 'Puthukudiyiruppu',
+                    },
+                    {
                         cityId: 818,
-                        name: "Visvamadhukulam"
-                    }]
-            }, {
-                districtId: "20",
-                name: "Vavuniya",
-                cities: [{
+                        name: 'Visvamadhukulam',
+                    },
+                ],
+            },
+            {
+                districtId: '20',
+                name: 'Vavuniya',
+                cities: [
+                    {
                         cityId: 109,
-                        name: "Cheddikulam"
-                    }, {
+                        name: 'Cheddikulam',
+                    },
+                    {
                         cityId: 318,
-                        name: "Kanagarayamkulam"
-                    }, {
+                        name: 'Kanagarayamkulam',
+                    },
+                    {
                         cityId: 557,
-                        name: "Nedunkarny"
-                    }, {
+                        name: 'Nedunkarny',
+                    },
+                    {
                         cityId: 593,
-                        name: "Omanthai"
-                    }, {
+                        name: 'Omanthai',
+                    },
+                    {
                         cityId: 809,
-                        name: "Vavuniya"
-                    }]
-            }, {
-                districtId: "21",
-                name: "Killinochchi",
-                cities: [{
+                        name: 'Vavuniya',
+                    },
+                ],
+            },
+            {
+                districtId: '21',
+                name: 'Killinochchi',
+                cities: [
+                    {
                         cityId: 9,
-                        name: "Akkarayankulam"
-                    }, {
+                        name: 'Akkarayankulam',
+                    },
+                    {
                         cityId: 278,
-                        name: "Iyakachchi"
-                    }, {
+                        name: 'Iyakachchi',
+                    },
+                    {
                         cityId: 365,
-                        name: "Kilinochchi"
-                    }, {
+                        name: 'Kilinochchi',
+                    },
+                    {
                         cityId: 517,
-                        name: "Mulankavil"
-                    }, {
+                        name: 'Mulankavil',
+                    },
+                    {
                         cityId: 604,
-                        name: "Pallai"
-                    }, {
+                        name: 'Pallai',
+                    },
+                    {
                         cityId: 625,
-                        name: "Paranthan"
-                    }, {
+                        name: 'Paranthan',
+                    },
+                    {
                         cityId: 801,
-                        name: "Vadiyadi"
-                    }]
-            }]
-    }, {
+                        name: 'Vadiyadi',
+                    },
+                ],
+            },
+        ],
+    },
+    {
         id: 4,
-        provinceId: "7",
-        name: "North Central",
-        district: [{
-                districtId: "15",
-                name: "Anuradhapura",
-                cities: [{
+        provinceId: '7',
+        name: 'North Central',
+        district: [
+            {
+                districtId: '15',
+                name: 'Anuradhapura',
+                cities: [
+                    {
                         cityId: 34,
-                        name: "Anuradhapura"
-                    }, {
+                        name: 'Anuradhapura',
+                    },
+                    {
                         cityId: 91,
-                        name: "Bogaswewa - Ikirigollewa"
-                    }, {
+                        name: 'Bogaswewa - Ikirigollewa',
+                    },
+                    {
                         cityId: 103,
-                        name: "Bulnewa"
-                    }, {
+                        name: 'Bulnewa',
+                    },
+                    {
                         cityId: 188,
-                        name: "Eppawela"
-                    }, {
+                        name: 'Eppawela',
+                    },
+                    {
                         cityId: 196,
-                        name: "Galenbindunuwewa"
-                    }, {
+                        name: 'Galenbindunuwewa',
+                    },
+                    {
                         cityId: 200,
-                        name: "Galkulama"
-                    }, {
+                        name: 'Galkulama',
+                    },
+                    {
                         cityId: 206,
-                        name: "Galnewa"
-                    }, {
+                        name: 'Galnewa',
+                    },
+                    {
                         cityId: 231,
-                        name: "Habarana"
-                    }, {
+                        name: 'Habarana',
+                    },
+                    {
                         cityId: 263,
-                        name: "Horowupotana"
-                    }, {
+                        name: 'Horowupotana',
+                    },
+                    {
                         cityId: 269,
-                        name: "Ihalawewa - Kiralogama"
-                    }, {
+                        name: 'Ihalawewa - Kiralogama',
+                    },
+                    {
                         cityId: 291,
-                        name: "Kahatagasdigiliya"
-                    }, {
+                        name: 'Kahatagasdigiliya',
+                    },
+                    {
                         cityId: 352,
-                        name: "Kebitigollawa"
-                    }, {
+                        name: 'Kebitigollawa',
+                    },
+                    {
                         cityId: 356,
-                        name: "Kekirawa"
-                    }, {
+                        name: 'Kekirawa',
+                    },
+                    {
                         cityId: 387,
-                        name: "Korasagalla"
-                    }, {
+                        name: 'Korasagalla',
+                    },
+                    {
                         cityId: 430,
-                        name: "Maha Vilachchiya"
-                    }, {
+                        name: 'Maha Vilachchiya',
+                    },
+                    {
                         cityId: 460,
-                        name: "Maradankadawala"
-                    }, {
+                        name: 'Maradankadawala',
+                    },
+                    {
                         cityId: 483,
-                        name: "Medawachchiya"
-                    }, {
+                        name: 'Medawachchiya',
+                    },
+                    {
                         cityId: 495,
-                        name: "Mihintale"
-                    }, {
+                        name: 'Mihintale',
+                    },
+                    {
                         cityId: 582,
-                        name: "Nochchiyagama"
-                    }, {
+                        name: 'Nochchiyagama',
+                    },
+                    {
                         cityId: 596,
-                        name: "Oyamaduwa"
-                    }, {
+                        name: 'Oyamaduwa',
+                    },
+                    {
                         cityId: 597,
-                        name: "Padaviya"
-                    }, {
+                        name: 'Padaviya',
+                    },
+                    {
                         cityId: 661,
-                        name: "Pothanegama"
-                    }, {
+                        name: 'Pothanegama',
+                    },
+                    {
                         cityId: 666,
-                        name: "Pubbogama"
-                    }, {
+                        name: 'Pubbogama',
+                    },
+                    {
                         cityId: 687,
-                        name: "Rajanganaya"
-                    }, {
+                        name: 'Rajanganaya',
+                    },
+                    {
                         cityId: 690,
-                        name: "Rambewa"
-                    }, {
+                        name: 'Rambewa',
+                    },
+                    {
                         cityId: 721,
-                        name: "Sippukulama"
-                    }, {
+                        name: 'Sippukulama',
+                    },
+                    {
                         cityId: 736,
-                        name: "Talawa"
-                    }, {
+                        name: 'Talawa',
+                    },
+                    {
                         cityId: 756,
-                        name: "Thambuthegama"
-                    }]
-            }, {
-                districtId: "16",
-                name: "Polonnaruwa",
-                cities: [{
+                        name: 'Thambuthegama',
+                    },
+                ],
+            },
+            {
+                districtId: '16',
+                name: 'Polonnaruwa',
+                cities: [
+                    {
                         cityId: 37,
-                        name: "Aralaganwila"
-                    }, {
+                        name: 'Aralaganwila',
+                    },
+                    {
                         cityId: 58,
-                        name: "Bakamuna"
-                    }, {
+                        name: 'Bakamuna',
+                    },
+                    {
                         cityId: 140,
-                        name: "Damanayaya"
-                    }, {
+                        name: 'Damanayaya',
+                    },
+                    {
                         cityId: 169,
-                        name: "Diyasenapura"
-                    }, {
+                        name: 'Diyasenapura',
+                    },
+                    {
                         cityId: 184,
-                        name: "Elahera"
-                    }, {
+                        name: 'Elahera',
+                    },
+                    {
                         cityId: 218,
-                        name: "Giritale"
-                    }, {
+                        name: 'Giritale',
+                    },
+                    {
                         cityId: 250,
-                        name: "Hingurakdamana"
-                    }, {
+                        name: 'Hingurakdamana',
+                    },
+                    {
                         cityId: 251,
-                        name: "Hingurakgoda"
-                    }, {
+                        name: 'Hingurakgoda',
+                    },
+                    {
                         cityId: 287,
-                        name: "Kaduruwela"
-                    }, {
+                        name: 'Kaduruwela',
+                    },
+                    {
                         cityId: 350,
-                        name: "Kaudulla"
-                    }, {
+                        name: 'Kaudulla',
+                    },
+                    {
                         cityId: 452,
-                        name: "Manampitiya"
-                    }, {
+                        name: 'Manampitiya',
+                    },
+                    {
                         cityId: 486,
-                        name: "Medirigiriya"
-                    }, {
+                        name: 'Medirigiriya',
+                    },
+                    {
                         cityId: 497,
-                        name: "Minneriya"
-                    }, {
+                        name: 'Minneriya',
+                    },
+                    {
                         cityId: 609,
-                        name: "Palugasdamana"
-                    }, {
+                        name: 'Palugasdamana',
+                    },
+                    {
                         cityId: 621,
-                        name: "Pansal Godella"
-                    }, {
+                        name: 'Pansal Godella',
+                    },
+                    {
                         cityId: 655,
-                        name: "Polonnaruwa"
-                    }, {
+                        name: 'Polonnaruwa',
+                    },
+                    {
                         cityId: 669,
-                        name: "Pulasthigama"
-                    }, {
+                        name: 'Pulasthigama',
+                    },
+                    {
                         cityId: 716,
-                        name: "Sewanapitiya"
-                    }, {
+                        name: 'Sewanapitiya',
+                    },
+                    {
                         cityId: 723,
-                        name: "Siripura - Dehiattakandiya"
-                    }, {
+                        name: 'Siripura - Dehiattakandiya',
+                    },
+                    {
                         cityId: 850,
-                        name: "Welikanda"
-                    }]
-            }]
-    }, {
+                        name: 'Welikanda',
+                    },
+                ],
+            },
+        ],
+    },
+    {
         id: 5,
-        provinceId: "3",
-        name: "North Western",
-        district: [{
-                districtId: "6",
-                name: "Kurunegala",
-                cities: [{
+        provinceId: '3',
+        name: 'North Western',
+        district: [
+            {
+                districtId: '6',
+                name: 'Kurunegala',
+                cities: [
+                    {
                         cityId: 16,
-                        name: "Alawwa"
-                    }, {
+                        name: 'Alawwa',
+                    },
+                    {
                         cityId: 25,
-                        name: "Ambanpola"
-                    }, {
+                        name: 'Ambanpola',
+                    },
+                    {
                         cityId: 62,
-                        name: "Bamunawala"
-                    }, {
+                        name: 'Bamunawala',
+                    },
+                    {
                         cityId: 64,
-                        name: "Bandarakoswatte"
-                    }, {
+                        name: 'Bandarakoswatte',
+                    },
+                    {
                         cityId: 67,
-                        name: "Barampola Junction"
-                    }, {
+                        name: 'Barampola Junction',
+                    },
+                    {
                         cityId: 77,
-                        name: "Battulu Oya"
-                    }, {
+                        name: 'Battulu Oya',
+                    },
+                    {
                         cityId: 89,
-                        name: "Bingiriya"
-                    }, {
+                        name: 'Bingiriya',
+                    },
+                    {
                         cityId: 141,
-                        name: "Dambadeniya"
-                    }, {
+                        name: 'Dambadeniya',
+                    },
+                    {
                         cityId: 174,
-                        name: "Dodangaslanda"
-                    }, {
+                        name: 'Dodangaslanda',
+                    },
+                    {
                         cityId: 178,
-                        name: "Dummalasuriya"
-                    }, {
+                        name: 'Dummalasuriya',
+                    },
+                    {
                         cityId: 195,
-                        name: "Galapitamulla"
-                    }, {
+                        name: 'Galapitamulla',
+                    },
+                    {
                         cityId: 198,
-                        name: "Galgamuwa"
-                    }, {
+                        name: 'Galgamuwa',
+                    },
+                    {
                         cityId: 219,
-                        name: "Giriulla"
-                    }, {
+                        name: 'Giriulla',
+                    },
+                    {
                         cityId: 224,
-                        name: "Gokarella"
-                    }, {
+                        name: 'Gokarella',
+                    },
+                    {
                         cityId: 226,
-                        name: "Gonagama"
-                    }, {
+                        name: 'Gonagama',
+                    },
+                    {
                         cityId: 245,
-                        name: "Hettipola"
-                    }, {
+                        name: 'Hettipola',
+                    },
+                    {
                         cityId: 255,
-                        name: "Hiripitiya"
-                    }, {
+                        name: 'Hiripitiya',
+                    },
+                    {
                         cityId: 260,
-                        name: "Horambawa"
-                    }, {
+                        name: 'Horambawa',
+                    },
+                    {
                         cityId: 266,
-                        name: "Ibbagamuwa"
-                    }, {
+                        name: 'Ibbagamuwa',
+                    },
+                    {
                         cityId: 284,
-                        name: "Kadahapola"
-                    }, {
+                        name: 'Kadahapola',
+                    },
+                    {
                         cityId: 310,
-                        name: "Kalugamuwa Junction - Kalugamuwa"
-                    }, {
+                        name: 'Kalugamuwa Junction - Kalugamuwa',
+                    },
+                    {
                         cityId: 317,
-                        name: "Kamburupola"
-                    }, {
+                        name: 'Kamburupola',
+                    },
+                    {
                         cityId: 324,
-                        name: "Kandanagedera"
-                    }, {
+                        name: 'Kandanagedera',
+                    },
+                    {
                         cityId: 344,
-                        name: "Katumuluwa"
-                    }, {
+                        name: 'Katumuluwa',
+                    },
+                    {
                         cityId: 347,
-                        name: "Katupotha"
-                    }, {
+                        name: 'Katupotha',
+                    },
+                    {
                         cityId: 362,
-                        name: "Keppetiwalana"
-                    }, {
+                        name: 'Keppetiwalana',
+                    },
+                    {
                         cityId: 364,
-                        name: "Ketawalagedara - Wewagama"
-                    }, {
+                        name: 'Ketawalagedara - Wewagama',
+                    },
+                    {
                         cityId: 377,
-                        name: "Kobeigane"
-                    }, {
+                        name: 'Kobeigane',
+                    },
+                    {
                         cityId: 404,
-                        name: "Kuliyapitiya"
-                    }, {
+                        name: 'Kuliyapitiya',
+                    },
+                    {
                         cityId: 406,
-                        name: "Kumbukgate"
-                    }, {
+                        name: 'Kumbukgate',
+                    },
+                    {
                         cityId: 412,
-                        name: "Kurunegala"
-                    }, {
+                        name: 'Kurunegala',
+                    },
+                    {
                         cityId: 440,
-                        name: "Maho"
-                    }, {
+                        name: 'Maho',
+                    },
+                    {
                         cityId: 443,
-                        name: "Makadura"
-                    }, {
+                        name: 'Makadura',
+                    },
+                    {
                         cityId: 466,
-                        name: "Maspotha"
-                    }, {
+                        name: 'Maspotha',
+                    },
+                    {
                         cityId: 476,
-                        name: "Mavee Ela Junction"
-                    }, {
+                        name: 'Mavee Ela Junction',
+                    },
+                    {
                         cityId: 480,
-                        name: "Mawathagama"
-                    }, {
+                        name: 'Mawathagama',
+                    },
+                    {
                         cityId: 488,
-                        name: "Meegalawa"
-                    }, {
+                        name: 'Meegalawa',
+                    },
+                    {
                         cityId: 492,
-                        name: "Melsiripura"
-                    }, {
+                        name: 'Melsiripura',
+                    },
+                    {
                         cityId: 498,
-                        name: "Minuwangate"
-                    }, {
+                        name: 'Minuwangate',
+                    },
+                    {
                         cityId: 515,
-                        name: "Mudukatuwa"
-                    }, {
+                        name: 'Mudukatuwa',
+                    },
+                    {
                         cityId: 530,
-                        name: "Nagollagama"
-                    }, {
+                        name: 'Nagollagama',
+                    },
+                    {
                         cityId: 531,
-                        name: "Nagollagoda"
-                    }, {
+                        name: 'Nagollagoda',
+                    },
+                    {
                         cityId: 540,
-                        name: "Nankawaththa"
-                    }, {
+                        name: 'Nankawaththa',
+                    },
+                    {
                         cityId: 543,
-                        name: "Narammala"
-                    }, {
+                        name: 'Narammala',
+                    },
+                    {
                         cityId: 544,
-                        name: "Narangoda"
-                    }, {
+                        name: 'Narangoda',
+                    },
+                    {
                         cityId: 572,
-                        name: "Nikaweratiya"
-                    }, {
+                        name: 'Nikaweratiya',
+                    },
+                    {
                         cityId: 617,
-                        name: "Pannala"
-                    }, {
+                        name: 'Pannala',
+                    },
+                    {
                         cityId: 639,
-                        name: "Pilessa"
-                    }, {
+                        name: 'Pilessa',
+                    },
+                    {
                         cityId: 653,
-                        name: "Polgahawela"
-                    }, {
+                        name: 'Polgahawela',
+                    },
+                    {
                         cityId: 657,
-                        name: "Polpithigama"
-                    }, {
+                        name: 'Polpithigama',
+                    },
+                    {
                         cityId: 665,
-                        name: "Potuhera"
-                    }, {
+                        name: 'Potuhera',
+                    },
+                    {
                         cityId: 702,
-                        name: "Ridigama"
-                    }, {
+                        name: 'Ridigama',
+                    },
+                    {
                         cityId: 706,
-                        name: "Saliya Ashokapura"
-                    }, {
+                        name: 'Saliya Ashokapura',
+                    },
+                    {
                         cityId: 709,
-                        name: "Sandalankawa"
-                    }, {
+                        name: 'Sandalankawa',
+                    },
+                    {
                         cityId: 773,
-                        name: "Thuththiripitigama - Kadawalagedara"
-                    }, {
+                        name: 'Thuththiripitigama - Kadawalagedara',
+                    },
+                    {
                         cityId: 785,
-                        name: "Udubaddawa"
-                    }, {
+                        name: 'Udubaddawa',
+                    },
+                    {
                         cityId: 817,
-                        name: "Vilaththawa - Puliyamkadawala"
-                    }, {
+                        name: 'Vilaththawa - Puliyamkadawala',
+                    },
+                    {
                         cityId: 833,
-                        name: "Wariyapola"
-                    }, {
+                        name: 'Wariyapola',
+                    },
+                    {
                         cityId: 839,
-                        name: "We - Uda"
-                    }, {
+                        name: 'We - Uda',
+                    },
+                    {
                         cityId: 843,
-                        name: "Weerapokuna"
-                    }, {
+                        name: 'Weerapokuna',
+                    },
+                    {
                         cityId: 863,
-                        name: "Wellawa"
-                    }, {
+                        name: 'Wellawa',
+                    },
+                    {
                         cityId: 865,
-                        name: "Welpothuwewa - Boruluwewa"
-                    }, {
+                        name: 'Welpothuwewa - Boruluwewa',
+                    },
+                    {
                         cityId: 867,
-                        name: "Wennoruwa"
-                    }, {
+                        name: 'Wennoruwa',
+                    },
+                    {
                         cityId: 872,
-                        name: "Withikuliya Junction"
-                    }, {
+                        name: 'Withikuliya Junction',
+                    },
+                    {
                         cityId: 876,
-                        name: "Yakwila - Paragammana"
-                    }, {
+                        name: 'Yakwila - Paragammana',
+                    },
+                    {
                         cityId: 883,
-                        name: "Ilippugamuwa"
-                    }, {
+                        name: 'Ilippugamuwa',
+                    },
+                    {
                         cityId: 886,
-                        name: "Kurunegala Rd - Bopitiya"
-                    }]
-            }, {
-                districtId: "8",
-                name: "Puttalam",
-                cities: [{
+                        name: 'Kurunegala Rd - Bopitiya',
+                    },
+                ],
+            },
+            {
+                districtId: '8',
+                name: 'Puttalam',
+                cities: [
+                    {
                         cityId: 29,
-                        name: "Anamaduwa"
-                    }, {
+                        name: 'Anamaduwa',
+                    },
+                    {
                         cityId: 35,
-                        name: "Arachchikattuwa"
-                    }, {
+                        name: 'Arachchikattuwa',
+                    },
+                    {
                         cityId: 42,
-                        name: "Arndigama"
-                    }, {
+                        name: 'Arndigama',
+                    },
+                    {
                         cityId: 66,
-                        name: "Bangadeniya"
-                    }, {
+                        name: 'Bangadeniya',
+                    },
+                    {
                         cityId: 99,
-                        name: "Botalegama"
-                    }, {
+                        name: 'Botalegama',
+                    },
+                    {
                         cityId: 112,
-                        name: "Chilaw"
-                    }, {
+                        name: 'Chilaw',
+                    },
+                    {
                         cityId: 145,
-                        name: "Dankotuwa"
-                    }, {
+                        name: 'Dankotuwa',
+                    },
+                    {
                         cityId: 190,
-                        name: "Etalai"
-                    }, {
+                        name: 'Etalai',
+                    },
+                    {
                         cityId: 275,
-                        name: "Inigodawela"
-                    }, {
+                        name: 'Inigodawela',
+                    },
+                    {
                         cityId: 294,
-                        name: "Kakkapalliya"
-                    }, {
+                        name: 'Kakkapalliya',
+                    },
+                    {
                         cityId: 306,
-                        name: "Kalpitiya"
-                    }, {
+                        name: 'Kalpitiya',
+                    },
+                    {
                         cityId: 307,
-                        name: "Kalpitiya Road - Mampuriya"
-                    }, {
+                        name: 'Kalpitiya Road - Mampuriya',
+                    },
+                    {
                         cityId: 451,
-                        name: "Mampuriya"
-                    }, {
+                        name: 'Mampuriya',
+                    },
+                    {
                         cityId: 320,
-                        name: "Kandakudah"
-                    }, {
+                        name: 'Kandakudah',
+                    },
+                    {
                         cityId: 326,
-                        name: "Kandathoduwawa"
-                    }, {
+                        name: 'Kandathoduwawa',
+                    },
+                    {
                         cityId: 346,
-                        name: "Katuneriya"
-                    }, {
+                        name: 'Katuneriya',
+                    },
+                    {
                         cityId: 382,
-                        name: "Kokkawila"
-                    }, {
+                        name: 'Kokkawila',
+                    },
+                    {
                         cityId: 418,
-                        name: "Lunuwila"
-                    }, {
+                        name: 'Lunuwila',
+                    },
+                    {
                         cityId: 420,
-                        name: "Madampe"
-                    }, {
+                        name: 'Madampe',
+                    },
+                    {
                         cityId: 426,
-                        name: "Madurankuliya"
-                    }, {
+                        name: 'Madurankuliya',
+                    },
+                    {
                         cityId: 435,
-                        name: "Mahawewa"
-                    }, {
+                        name: 'Mahawewa',
+                    },
+                    {
                         cityId: 436,
-                        name: "Mahawewa - Thoduwawa"
-                    }, {
+                        name: 'Mahawewa - Thoduwawa',
+                    },
+                    {
                         cityId: 462,
-                        name: "Marawila"
-                    }, {
+                        name: 'Marawila',
+                    },
+                    {
                         cityId: 484,
-                        name: "Medawakkulama - Andigama"
-                    }, {
+                        name: 'Medawakkulama - Andigama',
+                    },
+                    {
                         cityId: 523,
-                        name: "Mundelama"
-                    }, {
+                        name: 'Mundelama',
+                    },
+                    {
                         cityId: 535,
-                        name: "Nalladarankattuwa"
-                    }, {
+                        name: 'Nalladarankattuwa',
+                    },
+                    {
                         cityId: 546,
-                        name: "Nattandiya"
-                    }, {
+                        name: 'Nattandiya',
+                    },
+                    {
                         cityId: 547,
-                        name: "Nattandiya - Koswatta"
-                    }, {
+                        name: 'Nattandiya - Koswatta',
+                    },
+                    {
                         cityId: 550,
-                        name: "Nawagaththegama"
-                    }, {
+                        name: 'Nawagaththegama',
+                    },
+                    {
                         cityId: 583,
-                        name: "Noraicholai"
-                    }, {
+                        name: 'Noraicholai',
+                    },
+                    {
                         cityId: 616,
-                        name: "Panirendawa"
-                    }, {
+                        name: 'Panirendawa',
+                    },
+                    {
                         cityId: 670,
-                        name: "Puliyankulama Junction"
-                    }, {
+                        name: 'Puliyankulama Junction',
+                    },
+                    {
                         cityId: 680,
-                        name: "Puttalam"
-                    }, {
+                        name: 'Puttalam',
+                    },
+                    {
                         cityId: 707,
-                        name: "Saliyawewa"
-                    }, {
+                        name: 'Saliyawewa',
+                    },
+                    {
                         cityId: 714,
-                        name: "Serakuliya"
-                    }, {
+                        name: 'Serakuliya',
+                    },
+                    {
                         cityId: 733,
-                        name: "Tabbowa"
-                    }, {
+                        name: 'Tabbowa',
+                    },
+                    {
                         cityId: 755,
-                        name: "Thambarawila"
-                    }, {
+                        name: 'Thambarawila',
+                    },
+                    {
                         cityId: 778,
-                        name: "Toppuwa Junction"
-                    }, {
+                        name: 'Toppuwa Junction',
+                    },
+                    {
                         cityId: 807,
-                        name: "Vanatavilluwa"
-                    }, {
+                        name: 'Vanatavilluwa',
+                    },
+                    {
                         cityId: 822,
-                        name: "Waikkal"
-                    }, {
+                        name: 'Waikkal',
+                    },
+                    {
                         cityId: 854,
-                        name: "Welipennagahamulla"
-                    }, {
+                        name: 'Welipennagahamulla',
+                    },
+                    {
                         cityId: 861,
-                        name: "Wellamankara"
-                    }, {
+                        name: 'Wellamankara',
+                    },
+                    {
                         cityId: 866,
-                        name: "Wennappuwa"
-                    }]
-            }]
-    }, {
+                        name: 'Wennappuwa',
+                    },
+                ],
+            },
+        ],
+    },
+    {
         id: 6,
-        provinceId: "5",
-        name: "Sabaragamuwa",
-        district: [{
-                districtId: "22",
-                name: "Kegalle",
-                cities: [{
+        provinceId: '5',
+        name: 'Sabaragamuwa',
+        district: [
+            {
+                districtId: '22',
+                name: 'Kegalle',
+                cities: [
+                    {
                         cityId: 27,
-                        name: "Amithirigala"
-                    }, {
+                        name: 'Amithirigala',
+                    },
+                    {
                         cityId: 39,
-                        name: "Aranayake"
-                    }, {
+                        name: 'Aranayake',
+                    },
+                    {
                         cityId: 101,
-                        name: "Bulathkohupitiya"
-                    }, {
+                        name: 'Bulathkohupitiya',
+                    },
+                    {
                         cityId: 148,
-                        name: "Dehiowita"
-                    }, {
+                        name: 'Dehiowita',
+                    },
+                    {
                         cityId: 158,
-                        name: "Deraniyagala"
-                    }, {
+                        name: 'Deraniyagala',
+                    },
+                    {
                         cityId: 199,
-                        name: "Galigamuwa"
-                    }, {
+                        name: 'Galigamuwa',
+                    },
+                    {
                         cityId: 244,
-                        name: "Hemmathagama"
-                    }, {
+                        name: 'Hemmathagama',
+                    },
+                    {
                         cityId: 272,
-                        name: "Imbulgasdeniya"
-                    }, {
+                        name: 'Imbulgasdeniya',
+                    },
+                    {
                         cityId: 354,
-                        name: "Kegalle"
-                    }, {
+                        name: 'Kegalle',
+                    },
+                    {
                         cityId: 376,
-                        name: "Kithulgala"
-                    }, {
+                        name: 'Kithulgala',
+                    },
+                    {
                         cityId: 473,
-                        name: "Mattamagoda - Kotiyakumbura"
-                    }, {
+                        name: 'Mattamagoda - Kotiyakumbura',
+                    },
+                    {
                         cityId: 477,
-                        name: "Mawanella"
-                    }, {
+                        name: 'Mawanella',
+                    },
+                    {
                         cityId: 569,
-                        name: "Nelundeniya"
-                    }, {
+                        name: 'Nelundeniya',
+                    },
+                    {
                         cityId: 691,
-                        name: "Rambukkana"
-                    }, {
+                        name: 'Rambukkana',
+                    },
+                    {
                         cityId: 704,
-                        name: "Ruwanwella"
-                    }, {
+                        name: 'Ruwanwella',
+                    },
+                    {
                         cityId: 769,
-                        name: "Thulhiriya"
-                    }, {
+                        name: 'Thulhiriya',
+                    },
+                    {
                         cityId: 821,
-                        name: "Waharaka"
-                    }, {
+                        name: 'Waharaka',
+                    },
+                    {
                         cityId: 830,
-                        name: "Warakapola"
-                    }, {
+                        name: 'Warakapola',
+                    },
+                    {
                         cityId: 849,
-                        name: "Weligamuwa - Rambukkana"
-                    }, {
+                        name: 'Weligamuwa - Rambukkana',
+                    },
+                    {
                         cityId: 880,
-                        name: "Yatiyantota"
-                    }]
-            }, {
-                districtId: "9",
-                name: "Ratnapura",
-                cities: [{
+                        name: 'Yatiyantota',
+                    },
+                ],
+            },
+            {
+                districtId: '9',
+                name: 'Ratnapura',
+                cities: [
+                    {
                         cityId: 43,
-                        name: "Atakalampanna"
-                    }, {
+                        name: 'Atakalampanna',
+                    },
+                    {
                         cityId: 59,
-                        name: "Balangoda"
-                    }, {
+                        name: 'Balangoda',
+                    },
+                    {
                         cityId: 168,
-                        name: "Divurmpitiya - Gatahatta"
-                    }, {
+                        name: 'Divurmpitiya - Gatahatta',
+                    },
+                    {
                         cityId: 182,
-                        name: "Eheliyagoda"
-                    }, {
+                        name: 'Eheliyagoda',
+                    },
+                    {
                         cityId: 186,
-                        name: "Embilipitiya"
-                    }, {
+                        name: 'Embilipitiya',
+                    },
+                    {
                         cityId: 211,
-                        name: "Ganegama - Pelmadulla"
-                    }, {
+                        name: 'Ganegama - Pelmadulla',
+                    },
+                    {
                         cityId: 223,
-                        name: "Godakawela"
-                    }, {
+                        name: 'Godakawela',
+                    },
+                    {
                         cityId: 247,
-                        name: "Hidellana - Rathnapura"
-                    }, {
+                        name: 'Hidellana - Rathnapura',
+                    },
+                    {
                         cityId: 292,
-                        name: "Kahawatta"
-                    }, {
+                        name: 'Kahawatta',
+                    },
+                    {
                         cityId: 300,
-                        name: "Kalawana"
-                    }, {
+                        name: 'Kalawana',
+                    },
+                    {
                         cityId: 308,
-                        name: "Kaltota"
-                    }, {
+                        name: 'Kaltota',
+                    },
+                    {
                         cityId: 372,
-                        name: "Kiriella"
-                    }, {
+                        name: 'Kiriella',
+                    },
+                    {
                         cityId: 384,
-                        name: "Kolonna"
-                    }, {
+                        name: 'Kolonna',
+                    },
+                    {
                         cityId: 413,
-                        name: "Kuruwita"
-                    }, {
+                        name: 'Kuruwita',
+                    },
+                    {
                         cityId: 581,
-                        name: "Nivitigala"
-                    }, {
+                        name: 'Nivitigala',
+                    },
+                    {
                         cityId: 605,
-                        name: "Pallebedda"
-                    }, {
+                        name: 'Pallebedda',
+                    },
+                    {
                         cityId: 610,
-                        name: "Pambahinna"
-                    }, {
+                        name: 'Pambahinna',
+                    },
+                    {
                         cityId: 623,
-                        name: "Parakaduwa"
-                    }, {
+                        name: 'Parakaduwa',
+                    },
+                    {
                         cityId: 633,
-                        name: "Pelmadulla"
-                    }, {
+                        name: 'Pelmadulla',
+                    },
+                    {
                         cityId: 689,
-                        name: "Rakwana"
-                    }, {
+                        name: 'Rakwana',
+                    },
+                    {
                         cityId: 699,
-                        name: "Ratnapura"
-                    }, {
+                        name: 'Ratnapura',
+                    },
+                    {
                         cityId: 731,
-                        name: "Suriyakanda"
-                    }, {
+                        name: 'Suriyakanda',
+                    },
+                    {
                         cityId: 763,
-                        name: "Thimbolketiya"
-                    }]
-            }]
-    }, {
+                        name: 'Thimbolketiya',
+                    },
+                ],
+            },
+        ],
+    },
+    {
         id: 7,
-        provinceId: "2",
-        name: "Southern",
-        district: [{
-                districtId: "23",
-                name: "Hambantota",
-                cities: [{
+        provinceId: '2',
+        name: 'Southern',
+        district: [
+            {
+                districtId: '23',
+                name: 'Hambantota',
+                cities: [
+                    {
                         cityId: 24,
-                        name: "Ambalanthota"
-                    }, {
+                        name: 'Ambalanthota',
+                    },
+                    {
                         cityId: 31,
-                        name: "Angunukolapelessa"
-                    }, {
+                        name: 'Angunukolapelessa',
+                    },
+                    {
                         cityId: 80,
-                        name: "Beliatta"
-                    }, {
+                        name: 'Beliatta',
+                    },
+                    {
                         cityId: 94,
-                        name: "Bolana"
-                    }, {
+                        name: 'Bolana',
+                    },
+                    {
                         cityId: 146,
-                        name: "Debarawewa"
-                    }, {
+                        name: 'Debarawewa',
+                    },
+                    {
                         cityId: 235,
-                        name: "Hambantota"
-                    }, {
+                        name: 'Hambantota',
+                    },
+                    {
                         cityId: 264,
-                        name: "Hungama"
-                    }, {
+                        name: 'Hungama',
+                    },
+                    {
                         cityId: 299,
-                        name: "Kalametiya"
-                    }, {
+                        name: 'Kalametiya',
+                    },
+                    {
                         cityId: 368,
-                        name: "Kirama"
-                    }, {
+                        name: 'Kirama',
+                    },
+                    {
                         cityId: 374,
-                        name: "Kirinda"
-                    }, {
+                        name: 'Kirinda',
+                    },
+                    {
                         cityId: 417,
-                        name: "Lunugamvehera"
-                    }, {
+                        name: 'Lunugamvehera',
+                    },
+                    {
                         cityId: 434,
-                        name: "Mahawela - Nakulugama"
-                    }, {
+                        name: 'Mahawela - Nakulugama',
+                    },
+                    {
                         cityId: 494,
-                        name: "Middeniya"
-                    }, {
+                        name: 'Middeniya',
+                    },
+                    {
                         cityId: 576,
-                        name: "Nilwella"
-                    }, {
+                        name: 'Nilwella',
+                    },
+                    {
                         cityId: 693,
-                        name: "Ranna"
-                    }, {
+                        name: 'Ranna',
+                    },
+                    {
                         cityId: 728,
-                        name: "Sooriyawewa"
-                    }, {
+                        name: 'Sooriyawewa',
+                    },
+                    {
                         cityId: 729,
-                        name: "Suduwelipelessa Kirinda"
-                    }, {
+                        name: 'Suduwelipelessa Kirinda',
+                    },
+                    {
                         cityId: 732,
-                        name: "Suriyawewa"
-                    }, {
+                        name: 'Suriyawewa',
+                    },
+                    {
                         cityId: 741,
-                        name: "Tangalle"
-                    }, {
+                        name: 'Tangalle',
+                    },
+                    {
                         cityId: 766,
-                        name: "Thissamaharamaya"
-                    }, {
+                        name: 'Thissamaharamaya',
+                    },
+                    {
                         cityId: 775,
-                        name: "Tissamaharama"
-                    }, {
+                        name: 'Tissamaharama',
+                    },
+                    {
                         cityId: 824,
-                        name: "Walasmulla"
-                    }, {
+                        name: 'Walasmulla',
+                    },
+                    {
                         cityId: 825,
-                        name: "Walasmulla Rd - Weeraketiya"
-                    }, {
+                        name: 'Walasmulla Rd - Weeraketiya',
+                    },
+                    {
                         cityId: 842,
-                        name: "Weeraketiya"
-                    }, {
+                        name: 'Weeraketiya',
+                    },
+                    {
                         cityId: 844,
-                        name: "Weerawila"
-                    }]
-            }, {
-                districtId: "5",
-                name: "Matara",
-                cities: [{
+                        name: 'Weerawila',
+                    },
+                ],
+            },
+            {
+                districtId: '5',
+                name: 'Matara',
+                cities: [
+                    {
                         cityId: 11,
-                        name: "Akuressa"
-                    }, {
+                        name: 'Akuressa',
+                    },
+                    {
                         cityId: 85,
-                        name: "Bengamuwa"
-                    }, {
+                        name: 'Bengamuwa',
+                    },
+                    {
                         cityId: 151,
-                        name: "Deiyandara"
-                    }, {
+                        name: 'Deiyandara',
+                    },
+                    {
                         cityId: 157,
-                        name: "Deniyaya"
-                    }, {
+                        name: 'Deniyaya',
+                    },
+                    {
                         cityId: 161,
-                        name: "Devinuwara"
-                    }, {
+                        name: 'Devinuwara',
+                    },
+                    {
                         cityId: 163,
-                        name: "Dickwella"
-                    }, {
+                        name: 'Dickwella',
+                    },
+                    {
                         cityId: 173,
-                        name: "Dodanduwa"
-                    }, {
+                        name: 'Dodanduwa',
+                    },
+                    {
                         cityId: 210,
-                        name: "Gandara"
-                    }, {
+                        name: 'Gandara',
+                    },
+                    {
                         cityId: 232,
-                        name: "Hakmana"
-                    }, {
+                        name: 'Hakmana',
+                    },
+                    {
                         cityId: 295,
-                        name: "Kakunadura"
-                    }, {
+                        name: 'Kakunadura',
+                    },
+                    {
                         cityId: 315,
-                        name: "Kamburugamuwa"
-                    }, {
+                        name: 'Kamburugamuwa',
+                    },
+                    {
                         cityId: 316,
-                        name: "Kamburupitiya"
-                    }, {
+                        name: 'Kamburupitiya',
+                    },
+                    {
                         cityId: 400,
-                        name: "Kottegoda"
-                    }, {
+                        name: 'Kottegoda',
+                    },
+                    {
                         cityId: 403,
-                        name: "Kudawella"
-                    }, {
+                        name: 'Kudawella',
+                    },
+                    {
                         cityId: 468,
-                        name: "Matara"
-                    }, {
+                        name: 'Matara',
+                    },
+                    {
                         cityId: 478,
-                        name: "Mawarala"
-                    }, {
+                        name: 'Mawarala',
+                    },
+                    {
                         cityId: 485,
-                        name: "Meddawatta"
-                    }, {
+                        name: 'Meddawatta',
+                    },
+                    {
                         cityId: 502,
-                        name: "Mirissa"
-                    }, {
+                        name: 'Mirissa',
+                    },
+                    {
                         cityId: 511,
-                        name: "Morawaka"
-                    }, {
+                        name: 'Morawaka',
+                    },
+                    {
                         cityId: 608,
-                        name: "Pallimulla"
-                    }, {
+                        name: 'Pallimulla',
+                    },
+                    {
                         cityId: 644,
-                        name: "Pitabeddara"
-                    }, {
+                        name: 'Pitabeddara',
+                    },
+                    {
                         cityId: 677,
-                        name: "Puranawella"
-                    }, {
+                        name: 'Puranawella',
+                    },
+                    {
                         cityId: 695,
-                        name: "Ransegoda  Hakmana"
-                    }, {
+                        name: 'Ransegoda  Hakmana',
+                    },
+                    {
                         cityId: 761,
-                        name: "Thihagoda"
-                    }, {
+                        name: 'Thihagoda',
+                    },
+                    {
                         cityId: 799,
-                        name: "Urubokka"
-                    }, {
+                        name: 'Urubokka',
+                    },
+                    {
                         cityId: 823,
-                        name: "Walasgala"
-                    }, {
+                        name: 'Walasgala',
+                    },
+                    {
                         cityId: 831,
-                        name: "Waralla"
-                    }, {
+                        name: 'Waralla',
+                    },
+                    {
                         cityId: 847,
-                        name: "Weligama"
-                    }]
-            }, {
-                districtId: "4",
-                name: "Galle",
-                cities: [{
+                        name: 'Weligama',
+                    },
+                ],
+            },
+            {
+                districtId: '4',
+                name: 'Galle',
+                cities: [
+                    {
                         cityId: 3,
-                        name: "Ahangama"
-                    }, {
+                        name: 'Ahangama',
+                    },
+                    {
                         cityId: 4,
-                        name: "Ahungalla"
-                    }, {
+                        name: 'Ahungalla',
+                    },
+                    {
                         cityId: 20,
-                        name: "Aluthwala"
-                    }, {
+                        name: 'Aluthwala',
+                    },
+                    {
                         cityId: 23,
-                        name: "Ambalangoda"
-                    }, {
+                        name: 'Ambalangoda',
+                    },
+                    {
                         cityId: 52,
-                        name: "Baddegama"
-                    }, {
+                        name: 'Baddegama',
+                    },
+                    {
                         cityId: 60,
-                        name: "Balapitiya"
-                    }, {
+                        name: 'Balapitiya',
+                    },
+                    {
                         cityId: 70,
-                        name: "Batapola"
-                    }, {
+                        name: 'Batapola',
+                    },
+                    {
                         cityId: 95,
-                        name: "Boossa"
-                    }, {
+                        name: 'Boossa',
+                    },
+                    {
                         cityId: 156,
-                        name: "Denipitiya"
-                    }, {
+                        name: 'Denipitiya',
+                    },
+                    {
                         cityId: 160,
-                        name: "Devata Junction"
-                    }, {
+                        name: 'Devata Junction',
+                    },
+                    {
                         cityId: 185,
-                        name: "Elpitiya"
-                    }, {
+                        name: 'Elpitiya',
+                    },
+                    {
                         cityId: 201,
-                        name: "Galle"
-                    }, {
+                        name: 'Galle',
+                    },
+                    {
                         cityId: 227,
-                        name: "Gonapinuwala"
-                    }, {
+                        name: 'Gonapinuwala',
+                    },
+                    {
                         cityId: 230,
-                        name: "Habaraduwa"
-                    }, {
+                        name: 'Habaraduwa',
+                    },
+                    {
                         cityId: 248,
-                        name: "Hikkaduwa"
-                    }, {
+                        name: 'Hikkaduwa',
+                    },
+                    {
                         cityId: 253,
-                        name: "Hipankanda - Uragasmanhandiya"
-                    }, {
+                        name: 'Hipankanda - Uragasmanhandiya',
+                    },
+                    {
                         cityId: 271,
-                        name: "Imaduwa"
-                    }, {
+                        name: 'Imaduwa',
+                    },
+                    {
                         cityId: 298,
-                        name: "Kalaigana"
-                    }, {
+                        name: 'Kalaigana',
+                    },
+                    {
                         cityId: 314,
-                        name: "Kaluwella"
-                    }, {
+                        name: 'Kaluwella',
+                    },
+                    {
                         cityId: 334,
-                        name: "Karandeniya"
-                    }, {
+                        name: 'Karandeniya',
+                    },
+                    {
                         cityId: 348,
-                        name: "Katuwana"
-                    }, {
+                        name: 'Katuwana',
+                    },
+                    {
                         cityId: 395,
-                        name: "Kotapola"
-                    }, {
+                        name: 'Kotapola',
+                    },
+                    {
                         cityId: 427,
-                        name: "Magalle"
-                    }, {
+                        name: 'Magalle',
+                    },
+                    {
                         cityId: 491,
-                        name: "Meetiyagoda"
-                    }, {
+                        name: 'Meetiyagoda',
+                    },
+                    {
                         cityId: 532,
-                        name: "Nakiyadeniya"
-                    }, {
+                        name: 'Nakiyadeniya',
+                    },
+                    {
                         cityId: 570,
-                        name: "Neluwa"
-                    }, {
+                        name: 'Neluwa',
+                    },
+                    {
                         cityId: 643,
-                        name: "Pinnaduwa - Akmeemana"
-                    }, {
+                        name: 'Pinnaduwa - Akmeemana',
+                    },
+                    {
                         cityId: 645,
-                        name: "Pitigala"
-                    }, {
+                        name: 'Pitigala',
+                    },
+                    {
                         cityId: 648,
-                        name: "Poddala"
-                    }, {
+                        name: 'Poddala',
+                    },
+                    {
                         cityId: 697,
-                        name: "Ratgama"
-                    }, {
+                        name: 'Ratgama',
+                    },
+                    {
                         cityId: 730,
-                        name: "Suduwella"
-                    }, {
+                        name: 'Suduwella',
+                    },
+                    {
                         cityId: 739,
-                        name: "Talgaswela"
-                    }, {
+                        name: 'Talgaswela',
+                    },
+                    {
                         cityId: 742,
-                        name: "Tawalama"
-                    }, {
+                        name: 'Tawalama',
+                    },
+                    {
                         cityId: 747,
-                        name: "Thalagaha - Akmeemana"
-                    }, {
+                        name: 'Thalagaha - Akmeemana',
+                    },
+                    {
                         cityId: 754,
-                        name: "Thalgampala"
-                    }, {
+                        name: 'Thalgampala',
+                    },
+                    {
                         cityId: 787,
-                        name: "Udugama"
-                    }, {
+                        name: 'Udugama',
+                    },
+                    {
                         cityId: 795,
-                        name: "Uragasmanhandiya"
-                    }, {
+                        name: 'Uragasmanhandiya',
+                    },
+                    {
                         cityId: 796,
-                        name: "Urala"
-                    }, {
+                        name: 'Urala',
+                    },
+                    {
                         cityId: 829,
-                        name: "Wanduramba"
-                    }, {
+                        name: 'Wanduramba',
+                    },
+                    {
                         cityId: 875,
-                        name: "Yakkalamulla"
-                    }]
-            }]
-    }, {
+                        name: 'Yakkalamulla',
+                    },
+                ],
+            },
+        ],
+    },
+    {
         id: 8,
-        provinceId: "9",
-        name: "Uva",
-        district: [{
-                districtId: "24",
-                name: "Badulla",
-                cities: [{
+        provinceId: '9',
+        name: 'Uva',
+        district: [
+            {
+                districtId: '24',
+                name: 'Badulla',
+                cities: [
+                    {
                         cityId: 22,
-                        name: "Ambagasdowa"
-                    }, {
+                        name: 'Ambagasdowa',
+                    },
+                    {
                         cityId: 44,
-                        name: "Atampitiya"
-                    }, {
+                        name: 'Atampitiya',
+                    },
+                    {
                         cityId: 54,
-                        name: "Badulla"
-                    }, {
+                        name: 'Badulla',
+                    },
+                    {
                         cityId: 55,
-                        name: "Badulla Rd - Halpe"
-                    }, {
+                        name: 'Badulla Rd - Halpe',
+                    },
+                    {
                         cityId: 61,
-                        name: "Ballekatuwa"
-                    }, {
+                        name: 'Ballekatuwa',
+                    },
+                    {
                         cityId: 65,
-                        name: "Bandarawela"
-                    }, {
+                        name: 'Bandarawela',
+                    },
+                    {
                         cityId: 142,
-                        name: "Dambagalla"
-                    }, {
+                        name: 'Dambagalla',
+                    },
+                    {
                         cityId: 170,
-                        name: "Diyathalawa"
-                    }, {
+                        name: 'Diyathalawa',
+                    },
+                    {
                         cityId: 216,
-                        name: "Girandurukotte"
-                    }, {
+                        name: 'Girandurukotte',
+                    },
+                    {
                         cityId: 233,
-                        name: "Haldummulla"
-                    }, {
+                        name: 'Haldummulla',
+                    },
+                    {
                         cityId: 234,
-                        name: "Hali Ela"
-                    }, {
+                        name: 'Hali Ela',
+                    },
+                    {
                         cityId: 238,
-                        name: "Haputale"
-                    }, {
+                        name: 'Haputale',
+                    },
+                    {
                         cityId: 289,
-                        name: "Kahaniyagoda"
-                    }, {
+                        name: 'Kahaniyagoda',
+                    },
+                    {
                         cityId: 319,
-                        name: "Kandaketiya - Loggaloya Junction"
-                    }, {
+                        name: 'Kandaketiya - Loggaloya Junction',
+                    },
+                    {
                         cityId: 361,
-                        name: "Keppetipola"
-                    }, {
+                        name: 'Keppetipola',
+                    },
+                    {
                         cityId: 416,
-                        name: "Lunugala"
-                    }, {
+                        name: 'Lunugala',
+                    },
+                    {
                         cityId: 425,
-                        name: "Madulsima"
-                    }, {
+                        name: 'Madulsima',
+                    },
+                    {
                         cityId: 438,
-                        name: "Mahiyanganaya"
-                    }, {
+                        name: 'Mahiyanganaya',
+                    },
+                    {
                         cityId: 439,
-                        name: "Mahiyankanaya"
-                    }, {
+                        name: 'Mahiyankanaya',
+                    },
+                    {
                         cityId: 481,
-                        name: "Medagama"
-                    }, {
+                        name: 'Medagama',
+                    },
+                    {
                         cityId: 487,
-                        name: "Meegahakiwla"
-                    }, {
+                        name: 'Meegahakiwla',
+                    },
+                    {
                         cityId: 538,
-                        name: "Namunukula"
-                    }, {
+                        name: 'Namunukula',
+                    },
+                    {
                         cityId: 626,
-                        name: "Passara"
-                    }, {
+                        name: 'Passara',
+                    },
+                    {
                         cityId: 751,
-                        name: "Thalangamuwa"
-                    }, {
+                        name: 'Thalangamuwa',
+                    },
+                    {
                         cityId: 851,
-                        name: "Welimada"
-                    }, {
+                        name: 'Welimada',
+                    },
+                    {
                         cityId: 884,
-                        name: "Andaulpotha"
-                    }]
-            }, {
-                districtId: "25",
-                name: "Moneragala",
-                cities: [{
+                        name: 'Andaulpotha',
+                    },
+                ],
+            },
+            {
+                districtId: '25',
+                name: 'Moneragala',
+                cities: [
+                    {
                         cityId: 38,
-                        name: "Arambekema - Hambegamuwa"
-                    }, {
+                        name: 'Arambekema - Hambegamuwa',
+                    },
+                    {
                         cityId: 51,
-                        name: "Badalkumbura"
-                    }, {
+                        name: 'Badalkumbura',
+                    },
+                    {
                         cityId: 88,
-                        name: "Bibile"
-                    }, {
+                        name: 'Bibile',
+                    },
+                    {
                         cityId: 104,
-                        name: "Buttala"
-                    }, {
+                        name: 'Buttala',
+                    },
+                    {
                         cityId: 144,
-                        name: "Danduma"
-                    }, {
+                        name: 'Danduma',
+                    },
+                    {
                         cityId: 172,
-                        name: "Dobagahawela"
-                    }, {
+                        name: 'Dobagahawela',
+                    },
+                    {
                         cityId: 338,
-                        name: "Kataragama"
-                    }, {
+                        name: 'Kataragama',
+                    },
+                    {
                         cityId: 391,
-                        name: "Koslanda"
-                    }, {
+                        name: 'Koslanda',
+                    },
+                    {
                         cityId: 407,
-                        name: "Kumbukkana"
-                    }, {
+                        name: 'Kumbukkana',
+                    },
+                    {
                         cityId: 506,
-                        name: "Monaragala"
-                    }, {
+                        name: 'Monaragala',
+                    },
+                    {
                         cityId: 726,
-                        name: "Siyambalanduwa"
-                    }, {
+                        name: 'Siyambalanduwa',
+                    },
+                    {
                         cityId: 740,
-                        name: "Tanamalwila"
-                    }, {
+                        name: 'Tanamalwila',
+                    },
+                    {
                         cityId: 758,
-                        name: "Thelulla"
-                    }, {
+                        name: 'Thelulla',
+                    },
+                    {
                         cityId: 859,
-                        name: "Weliyaya"
-                    }, {
+                        name: 'Weliyaya',
+                    },
+                    {
                         cityId: 864,
-                        name: "Wellawaya"
-                    }]
-            }]
-    }, {
+                        name: 'Wellawaya',
+                    },
+                ],
+            },
+        ],
+    },
+    {
         id: 9,
-        provinceId: "1",
-        name: "Western",
-        district: [{
-                districtId: "1",
-                name: "Colombo",
-                cities: [{
+        provinceId: '1',
+        name: 'Western',
+        district: [
+            {
+                districtId: '1',
+                name: 'Colombo',
+                cities: [
+                    {
                         cityId: 26,
-                        name: "Ambathale"
-                    }, {
+                        name: 'Ambathale',
+                    },
+                    {
                         cityId: 46,
-                        name: "Athurugiriya"
-                    }, {
+                        name: 'Athurugiriya',
+                    },
+                    {
                         cityId: 49,
-                        name: "Avissawella"
-                    }, {
+                        name: 'Avissawella',
+                    },
+                    {
                         cityId: 72,
-                        name: "Battaramulla"
-                    }, {
+                        name: 'Battaramulla',
+                    },
+                    {
                         cityId: 93,
-                        name: "Bokundara"
-                    }, {
+                        name: 'Bokundara',
+                    },
+                    {
                         cityId: 98,
-                        name: "Boralesgamuwa"
-                    }, {
+                        name: 'Boralesgamuwa',
+                    },
+                    {
                         cityId: 115,
-                        name: "Colombo"
-                    }, {
+                        name: 'Colombo',
+                    },
+                    {
                         cityId: 116,
-                        name: "Colombo - 02"
-                    }, {
+                        name: 'Colombo - 02',
+                    },
+                    {
                         cityId: 117,
-                        name: "Colombo - 03"
-                    }, {
+                        name: 'Colombo - 03',
+                    },
+                    {
                         cityId: 118,
-                        name: "Colombo - 04"
-                    }, {
+                        name: 'Colombo - 04',
+                    },
+                    {
                         cityId: 119,
-                        name: "Colombo - 05"
-                    }, {
+                        name: 'Colombo - 05',
+                    },
+                    {
                         cityId: 120,
-                        name: "Colombo - 06"
-                    }, {
+                        name: 'Colombo - 06',
+                    },
+                    {
                         cityId: 121,
-                        name: "Colombo - 07"
-                    }, {
+                        name: 'Colombo - 07',
+                    },
+                    {
                         cityId: 122,
-                        name: "Colombo - 08"
-                    }, {
+                        name: 'Colombo - 08',
+                    },
+                    {
                         cityId: 123,
-                        name: "Colombo - 09"
-                    }, {
+                        name: 'Colombo - 09',
+                    },
+                    {
                         cityId: 124,
-                        name: "Colombo - 10"
-                    }, {
+                        name: 'Colombo - 10',
+                    },
+                    {
                         cityId: 125,
-                        name: "Colombo - 11"
-                    }, {
+                        name: 'Colombo - 11',
+                    },
+                    {
                         cityId: 126,
-                        name: "Colombo - 13"
-                    }, {
+                        name: 'Colombo - 13',
+                    },
+                    {
                         cityId: 127,
-                        name: "Colombo - 14"
-                    }, {
+                        name: 'Colombo - 14',
+                    },
+                    {
                         cityId: 128,
-                        name: "Colombo - 15"
-                    }, {
+                        name: 'Colombo - 15',
+                    },
+                    {
                         cityId: 149,
-                        name: "Dehiwala"
-                    }, {
+                        name: 'Dehiwala',
+                    },
+                    {
                         cityId: 191,
-                        name: "Ethul Kotte"
-                    }, {
+                        name: 'Ethul Kotte',
+                    },
+                    {
                         cityId: 207,
-                        name: "Gamgodawila"
-                    }, {
+                        name: 'Gamgodawila',
+                    },
+                    {
                         cityId: 220,
-                        name: "Godagama"
-                    }, {
+                        name: 'Godagama',
+                    },
+                    {
                         cityId: 228,
-                        name: "Gothatuwa"
-                    }, {
+                        name: 'Gothatuwa',
+                    },
+                    {
                         cityId: 237,
-                        name: "Hanwella"
-                    }, {
+                        name: 'Hanwella',
+                    },
+                    {
                         cityId: 256,
-                        name: "Hokandara North"
-                    }, {
+                        name: 'Hokandara North',
+                    },
+                    {
                         cityId: 257,
-                        name: "Hokandara South"
-                    }, {
+                        name: 'Hokandara South',
+                    },
+                    {
                         cityId: 258,
-                        name: "Homagama"
-                    }, {
+                        name: 'Homagama',
+                    },
+                    {
                         cityId: 268,
-                        name: "Ihala Kosgama"
-                    }, {
+                        name: 'Ihala Kosgama',
+                    },
+                    {
                         cityId: 288,
-                        name: "Kaduwela"
-                    }, {
+                        name: 'Kaduwela',
+                    },
+                    {
                         cityId: 309,
-                        name: "Kalubowila"
-                    }, {
+                        name: 'Kalubowila',
+                    },
+                    {
                         cityId: 363,
-                        name: "Kesbewa"
-                    }, {
+                        name: 'Kesbewa',
+                    },
+                    {
                         cityId: 380,
-                        name: "Kohuwela"
-                    }, {
+                        name: 'Kohuwela',
+                    },
+                    {
                         cityId: 388,
-                        name: "Kirulapone"
-                    }, {
+                        name: 'Kirulapone',
+                    },
+                    {
                         cityId: 389,
-                        name: "Kosgama"
-                    }, {
+                        name: 'Kosgama',
+                    },
+                    {
                         cityId: 392,
-                        name: "Koswatta"
-                    }, {
+                        name: 'Koswatta',
+                    },
+                    {
                         cityId: 397,
-                        name: "Kotikawatte"
-                    }, {
+                        name: 'Kotikawatte',
+                    },
+                    {
                         cityId: 398,
-                        name: "Kottawa"
-                    }, {
+                        name: 'Kottawa',
+                    },
+                    {
                         cityId: 399,
-                        name: "Kotte"
-                    }, {
+                        name: 'Kotte',
+                    },
+                    {
                         cityId: 422,
-                        name: "Madapatha"
-                    }, {
+                        name: 'Madapatha',
+                    },
+                    {
                         cityId: 424,
-                        name: "Madiwela"
-                    }, {
+                        name: 'Madiwela',
+                    },
+                    {
                         cityId: 433,
-                        name: "Maharagama"
-                    }, {
+                        name: 'Maharagama',
+                    },
+                    {
                         cityId: 446,
-                        name: "Malabe"
-                    }, {
+                        name: 'Malabe',
+                    },
+                    {
                         cityId: 474,
-                        name: "Mattegoda"
-                    }, {
+                        name: 'Mattegoda',
+                    },
+                    {
                         cityId: 489,
-                        name: "Meegoda"
-                    }, {
+                        name: 'Meegoda',
+                    },
+                    {
                         cityId: 501,
-                        name: "Mirihana"
-                    }, {
+                        name: 'Mirihana',
+                    },
+                    {
                         cityId: 508,
-                        name: "Moratuwa"
-                    }, {
+                        name: 'Moratuwa',
+                    },
+                    {
                         cityId: 514,
-                        name: "Mount Lavinia"
-                    }, {
+                        name: 'Mount Lavinia',
+                    },
+                    {
                         cityId: 519,
-                        name: "Mulleriyawa - New Town"
-                    }, {
+                        name: 'Mulleriyawa - New Town',
+                    },
+                    {
                         cityId: 520,
-                        name: "Mulleriyawa North"
-                    }, {
+                        name: 'Mulleriyawa North',
+                    },
+                    {
                         cityId: 542,
-                        name: "Narahenpita"
-                    }, {
+                        name: 'Narahenpita',
+                    },
+                    {
                         cityId: 551,
-                        name: "Nawala"
-                    }, {
+                        name: 'Nawala',
+                    },
+                    {
                         cityId: 553,
-                        name: "Nawinna - High Level Road"
-                    }, {
+                        name: 'Nawinna - High Level Road',
+                    },
+                    {
                         cityId: 588,
-                        name: "Nugegoda"
-                    }, {
+                        name: 'Nugegoda',
+                    },
+                    {
                         cityId: 595,
-                        name: "Orugodawatta"
-                    }, {
+                        name: 'Orugodawatta',
+                    },
+                    {
                         cityId: 600,
-                        name: "Padukka"
-                    }, {
+                        name: 'Padukka',
+                    },
+                    {
                         cityId: 601,
-                        name: "Padukka - Meepe Junction"
-                    }, {
+                        name: 'Padukka - Meepe Junction',
+                    },
+                    {
                         cityId: 619,
-                        name: "Pannipitiya"
-                    }, {
+                        name: 'Pannipitiya',
+                    },
+                    {
                         cityId: 630,
-                        name: "Pelawetta"
-                    }, {
+                        name: 'Pelawetta',
+                    },
+                    {
                         cityId: 642,
-                        name: "Piliyandala"
-                    }, {
+                        name: 'Piliyandala',
+                    },
+                    {
                         cityId: 654,
-                        name: "Polgasowita"
-                    }, {
+                        name: 'Polgasowita',
+                    },
+                    {
                         cityId: 686,
-                        name: "Rajagiriya"
-                    }, {
+                        name: 'Rajagiriya',
+                    },
+                    {
                         cityId: 692,
-                        name: "Ranala"
-                    }, {
+                        name: 'Ranala',
+                    },
+                    {
                         cityId: 698,
-                        name: "Ratmalana"
-                    }, {
+                        name: 'Ratmalana',
+                    },
+                    {
                         cityId: 748,
-                        name: "Thalahena"
-                    }, {
+                        name: 'Thalahena',
+                    },
+                    {
                         cityId: 753,
-                        name: "Thalawathugoda"
-                    }, {
+                        name: 'Thalawathugoda',
+                    },
+                    {
                         cityId: 826,
-                        name: "Walgama Junction - Athrugiriya"
-                    }, {
+                        name: 'Walgama Junction - Athrugiriya',
+                    },
+                    {
                         cityId: 862,
-                        name: "Wellampitiya"
-                    }]
-            }, {
-                districtId: "2",
-                name: "Gampaha",
-                cities: [{
+                        name: 'Wellampitiya',
+                    },
+                ],
+            },
+            {
+                districtId: '2',
+                name: 'Gampaha',
+                cities: [
+                    {
                         cityId: 5,
-                        name: "Akarawita"
-                    }, {
+                        name: 'Akarawita',
+                    },
+                    {
                         cityId: 48,
-                        name: "Attangalla"
-                    }, {
+                        name: 'Attangalla',
+                    },
+                    {
                         cityId: 50,
-                        name: "Badalgama"
-                    }, {
+                        name: 'Badalgama',
+                    },
+                    {
                         cityId: 56,
-                        name: "Baduragoda"
-                    }, {
+                        name: 'Baduragoda',
+                    },
+                    {
                         cityId: 69,
-                        name: "Bataleeya"
-                    }, {
+                        name: 'Bataleeya',
+                    },
+                    {
                         cityId: 71,
-                        name: "Batepola - Dunagaha"
-                    }, {
+                        name: 'Batepola - Dunagaha',
+                    },
+                    {
                         cityId: 78,
-                        name: "Batuwatta"
-                    }, {
+                        name: 'Batuwatta',
+                    },
+                    {
                         cityId: 84,
-                        name: "Bemmulla"
-                    }, {
+                        name: 'Bemmulla',
+                    },
+                    {
                         cityId: 90,
-                        name: "Biyagama"
-                    }, {
+                        name: 'Biyagama',
+                    },
+                    {
                         cityId: 138,
-                        name: "Dalupotha"
-                    }, {
+                        name: 'Dalupotha',
+                    },
+                    {
                         cityId: 152,
-                        name: "Delgoda"
-                    }, {
+                        name: 'Delgoda',
+                    },
+                    {
                         cityId: 155,
-                        name: "Demanhandiya - Miriswatta"
-                    }, {
+                        name: 'Demanhandiya - Miriswatta',
+                    },
+                    {
                         cityId: 162,
-                        name: "Dewalapola"
-                    }, {
+                        name: 'Dewalapola',
+                    },
+                    {
                         cityId: 164,
-                        name: "Dikowita"
-                    }, {
+                        name: 'Dikowita',
+                    },
+                    {
                         cityId: 166,
-                        name: "Divulapitiya"
-                    }, {
+                        name: 'Divulapitiya',
+                    },
+                    {
                         cityId: 176,
-                        name: "Dompe"
-                    }, {
+                        name: 'Dompe',
+                    },
+                    {
                         cityId: 179,
-                        name: "Dunagaha"
-                    }, {
+                        name: 'Dunagaha',
+                    },
+                    {
                         cityId: 183,
-                        name: "Ekala"
-                    }, {
+                        name: 'Ekala',
+                    },
+                    {
                         cityId: 208,
-                        name: "Gampaha"
-                    }, {
+                        name: 'Gampaha',
+                    },
+                    {
                         cityId: 212,
-                        name: "Ganemulla"
-                    }, {
+                        name: 'Ganemulla',
+                    },
+                    {
                         cityId: 217,
-                        name: "Giridara"
-                    }, {
+                        name: 'Giridara',
+                    },
+                    {
                         cityId: 242,
-                        name: "Hedala"
-                    }, {
+                        name: 'Hedala',
+                    },
+                    {
                         cityId: 243,
-                        name: "Heiyanthuduwa"
-                    }, {
+                        name: 'Heiyanthuduwa',
+                    },
+                    {
                         cityId: 267,
-                        name: "Idigolla"
-                    }, {
+                        name: 'Idigolla',
+                    },
+                    {
                         cityId: 279,
-                        name: "Jaela"
-                    }, {
+                        name: 'Jaela',
+                    },
+                    {
                         cityId: 285,
-                        name: "Kadawatha"
-                    }, {
+                        name: 'Kadawatha',
+                    },
+                    {
                         cityId: 296,
-                        name: "Kal - Eliya"
-                    }, {
+                        name: 'Kal - Eliya',
+                    },
+                    {
                         cityId: 297,
-                        name: "Kalagedihena"
-                    }, {
+                        name: 'Kalagedihena',
+                    },
+                    {
                         cityId: 322,
-                        name: "Kandana"
-                    }, {
+                        name: 'Kandana',
+                    },
+                    {
                         cityId: 336,
-                        name: "Katana"
-                    }, {
+                        name: 'Katana',
+                    },
+                    {
                         cityId: 341,
-                        name: "Kattuwa"
-                    }, {
+                        name: 'Kattuwa',
+                    },
+                    {
                         cityId: 345,
-                        name: "Katunayake"
-                    }, {
+                        name: 'Katunayake',
+                    },
+                    {
                         cityId: 349,
-                        name: "Katuwellagama Junction"
-                    }, {
+                        name: 'Katuwellagama Junction',
+                    },
+                    {
                         cityId: 357,
-                        name: "Kelaniya"
-                    }, {
+                        name: 'Kelaniya',
+                    },
+                    {
                         cityId: 366,
-                        name: "Kimbulapitiya"
-                    }, {
+                        name: 'Kimbulapitiya',
+                    },
+                    {
                         cityId: 371,
-                        name: "Kiribathgoda"
-                    }, {
+                        name: 'Kiribathgoda',
+                    },
+                    {
                         cityId: 373,
-                        name: "Kirillawela - Imbulgoda"
-                    }, {
+                        name: 'Kirillawela - Imbulgoda',
+                    },
+                    {
                         cityId: 375,
-                        name: "Kirindiwela"
-                    }, {
+                        name: 'Kirindiwela',
+                    },
+                    {
                         cityId: 378,
-                        name: "Kochchikade"
-                    }, {
+                        name: 'Kochchikade',
+                    },
+                    {
                         cityId: 393,
-                        name: "Kotadeniyawa"
-                    }, {
+                        name: 'Kotadeniyawa',
+                    },
+                    {
                         cityId: 401,
-                        name: "Kotugoda"
-                    }, {
+                        name: 'Kotugoda',
+                    },
+                    {
                         cityId: 410,
-                        name: "Kurana - Katunayaka"
-                    }, {
+                        name: 'Kurana - Katunayaka',
+                    },
+                    {
                         cityId: 415,
-                        name: "Loluwagoda"
-                    }, {
+                        name: 'Loluwagoda',
+                    },
+                    {
                         cityId: 419,
-                        name: "Mabima"
-                    }, {
+                        name: 'Mabima',
+                    },
+                    {
                         cityId: 421,
-                        name: "Madampella"
-                    }, {
+                        name: 'Madampella',
+                    },
+                    {
                         cityId: 431,
-                        name: "Mahabage"
-                    }, {
+                        name: 'Mahabage',
+                    },
+                    {
                         cityId: 432,
-                        name: "Mahara"
-                    }, {
+                        name: 'Mahara',
+                    },
+                    {
                         cityId: 444,
-                        name: "Makola"
-                    }, {
+                        name: 'Makola',
+                    },
+                    {
                         cityId: 450,
-                        name: "Malwatu - Hiripitiya"
-                    }, {
+                        name: 'Malwatu - Hiripitiya',
+                    },
+                    {
                         cityId: 461,
-                        name: "Marandagahamula"
-                    }, {
+                        name: 'Marandagahamula',
+                    },
+                    {
                         cityId: 479,
-                        name: "Mawaramandiya"
-                    }, {
+                        name: 'Mawaramandiya',
+                    },
+                    {
                         cityId: 496,
-                        name: "Millathe - Kiridiwela"
-                    }, {
+                        name: 'Millathe - Kiridiwela',
+                    },
+                    {
                         cityId: 499,
-                        name: "Minuwangoda"
-                    }, {
+                        name: 'Minuwangoda',
+                    },
+                    {
                         cityId: 500,
-                        name: "Mirigama"
-                    }, {
+                        name: 'Mirigama',
+                    },
+                    {
                         cityId: 516,
-                        name: "Mudungoda"
-                    }, {
+                        name: 'Mudungoda',
+                    },
+                    {
                         cityId: 529,
-                        name: "Nagoda"
-                    }, {
+                        name: 'Nagoda',
+                    },
+                    {
                         cityId: 534,
-                        name: "Nalla"
-                    }, {
+                        name: 'Nalla',
+                    },
+                    {
                         cityId: 545,
-                        name: "Naranwala"
-                    }, {
+                        name: 'Naranwala',
+                    },
+                    {
                         cityId: 559,
-                        name: "Negombo"
-                    }, {
+                        name: 'Negombo',
+                    },
+                    {
                         cityId: 567,
-                        name: "Nelligahamulla - Atthanagalla"
-                    }, {
+                        name: 'Nelligahamulla - Atthanagalla',
+                    },
+                    {
                         cityId: 579,
-                        name: "Nittambuwa"
-                    }, {
+                        name: 'Nittambuwa',
+                    },
+                    {
                         cityId: 607,
-                        name: "Pallewela"
-                    }, {
+                        name: 'Pallewela',
+                    },
+                    {
                         cityId: 611,
-                        name: "Pamunugama"
-                    }, {
+                        name: 'Pamunugama',
+                    },
+                    {
                         cityId: 627,
-                        name: "Pasyala"
-                    }, {
+                        name: 'Pasyala',
+                    },
+                    {
                         cityId: 631,
-                        name: "Peliyagoda"
-                    }, {
+                        name: 'Peliyagoda',
+                    },
+                    {
                         cityId: 646,
-                        name: "Pitipana"
-                    }, {
+                        name: 'Pitipana',
+                    },
+                    {
                         cityId: 647,
-                        name: "Pitipana - South"
-                    }, {
+                        name: 'Pitipana - South',
+                    },
+                    {
                         cityId: 649,
-                        name: "Pohonnaruwa - Meerigama"
-                    }, {
+                        name: 'Pohonnaruwa - Meerigama',
+                    },
+                    {
                         cityId: 667,
-                        name: "Pugoda"
-                    }, {
+                        name: 'Pugoda',
+                    },
+                    {
                         cityId: 682,
-                        name: "Puwakwetiya - Kadawata"
-                    }, {
+                        name: 'Puwakwetiya - Kadawata',
+                    },
+                    {
                         cityId: 683,
-                        name: "Raddolugama"
-                    }, {
+                        name: 'Raddolugama',
+                    },
+                    {
                         cityId: 685,
-                        name: "Ragama"
-                    }, {
+                        name: 'Ragama',
+                    },
+                    {
                         cityId: 694,
-                        name: "Ranpokunugama"
-                    }, {
+                        name: 'Ranpokunugama',
+                    },
+                    {
                         cityId: 713,
-                        name: "Seeduwa"
-                    }, {
+                        name: 'Seeduwa',
+                    },
+                    {
                         cityId: 727,
-                        name: "Siyambalape"
-                    }, {
+                        name: 'Siyambalape',
+                    },
+                    {
                         cityId: 760,
-                        name: "Thibirigaskatuwa"
-                    }, {
+                        name: 'Thibirigaskatuwa',
+                    },
+                    {
                         cityId: 762,
-                        name: "Thihariya"
-                    }, {
+                        name: 'Thihariya',
+                    },
+                    {
                         cityId: 788,
-                        name: "Udugampola"
-                    }, {
+                        name: 'Udugampola',
+                    },
+                    {
                         cityId: 798,
-                        name: "Urapola"
-                    }, {
+                        name: 'Urapola',
+                    },
+                    {
                         cityId: 814,
-                        name: "Veyangoda"
-                    }, {
+                        name: 'Veyangoda',
+                    },
+                    {
                         cityId: 834,
-                        name: "Wattala"
-                    }, {
+                        name: 'Wattala',
+                    },
+                    {
                         cityId: 840,
-                        name: "Webada"
-                    }, {
+                        name: 'Webada',
+                    },
+                    {
                         cityId: 856,
-                        name: "Welisara - Kandana"
-                    }, {
+                        name: 'Welisara - Kandana',
+                    },
+                    {
                         cityId: 857,
-                        name: "Welisara - Maththumagala"
-                    }, {
+                        name: 'Welisara - Maththumagala',
+                    },
+                    {
                         cityId: 858,
-                        name: "Weliweriya"
-                    }, {
+                        name: 'Weliweriya',
+                    },
+                    {
                         cityId: 869,
-                        name: "Weweldeniya"
-                    }, {
+                        name: 'Weweldeniya',
+                    },
+                    {
                         cityId: 871,
-                        name: "Wilimbula - Henegama"
-                    }, {
+                        name: 'Wilimbula - Henegama',
+                    },
+                    {
                         cityId: 874,
-                        name: "Yakkala"
-                    }]
-            }, {
-                districtId: "3",
-                name: "Kaluthara",
-                cities: [{
+                        name: 'Yakkala',
+                    },
+                ],
+            },
+            {
+                districtId: '3',
+                name: 'Kaluthara',
+                cities: [
+                    {
                         cityId: 2,
-                        name: "Agalawatta"
-                    }, {
+                        name: 'Agalawatta',
+                    },
+                    {
                         cityId: 19,
-                        name: "Aluthgama"
-                    }, {
+                        name: 'Aluthgama',
+                    },
+                    {
                         cityId: 32,
-                        name: "Anguruwathota"
-                    }, {
+                        name: 'Anguruwathota',
+                    },
+                    {
                         cityId: 36,
-                        name: "Arakawila - Handapangoda"
-                    }, {
+                        name: 'Arakawila - Handapangoda',
+                    },
+                    {
                         cityId: 57,
-                        name: "Badureliya"
-                    }, {
+                        name: 'Badureliya',
+                    },
+                    {
                         cityId: 63,
-                        name: "Bandaragama"
-                    }, {
+                        name: 'Bandaragama',
+                    },
+                    {
                         cityId: 68,
-                        name: "Batagoda"
-                    }, {
+                        name: 'Batagoda',
+                    },
+                    {
                         cityId: 83,
-                        name: "Bellapitiya - Anguruwathota"
-                    }, {
+                        name: 'Bellapitiya - Anguruwathota',
+                    },
+                    {
                         cityId: 86,
-                        name: "Beruwela - Gorakadoowa"
-                    }, {
+                        name: 'Beruwela - Gorakadoowa',
+                    },
+                    {
                         cityId: 87,
-                        name: "Beruwala"
-                    }, {
+                        name: 'Beruwala',
+                    },
+                    {
                         cityId: 102,
-                        name: "Bulathsinhala"
-                    }, {
+                        name: 'Bulathsinhala',
+                    },
+                    {
                         cityId: 175,
-                        name: "Dodangoda"
-                    }, {
+                        name: 'Dodangoda',
+                    },
+                    {
                         cityId: 261,
-                        name: "Horana"
-                    }, {
+                        name: 'Horana',
+                    },
+                    {
                         cityId: 274,
-                        name: "Ingiriya"
-                    }, {
+                        name: 'Ingiriya',
+                    },
+                    {
                         cityId: 277,
-                        name: "Ittapana"
-                    }, {
+                        name: 'Ittapana',
+                    },
+                    {
                         cityId: 311,
-                        name: "Kalutara North"
-                    }, {
+                        name: 'Kalutara North',
+                    },
+                    {
                         cityId: 312,
-                        name: "Kalutara South"
-                    }, {
+                        name: 'Kalutara South',
+                    },
+                    {
                         cityId: 343,
-                        name: "Katukurunda"
-                    }, {
+                        name: 'Katukurunda',
+                    },
+                    {
                         cityId: 405,
-                        name: "Kumbuka West"
-                    }, {
+                        name: 'Kumbuka West',
+                    },
+                    {
                         cityId: 428,
-                        name: "Maggona"
-                    }, {
+                        name: 'Maggona',
+                    },
+                    {
                         cityId: 475,
-                        name: "Matugama"
-                    }, {
+                        name: 'Matugama',
+                    },
+                    {
                         cityId: 504,
-                        name: "Molligoda"
-                    }, {
+                        name: 'Molligoda',
+                    },
+                    {
                         cityId: 507,
-                        name: "Moragahahena"
-                    }, {
+                        name: 'Moragahahena',
+                    },
+                    {
                         cityId: 513,
-                        name: "Morontuduwa"
-                    }, {
+                        name: 'Morontuduwa',
+                    },
+                    {
                         cityId: 556,
-                        name: "Neboda"
-                    }, {
+                        name: 'Neboda',
+                    },
+                    {
                         cityId: 612,
-                        name: "Panadura"
-                    }, {
+                        name: 'Panadura',
+                    },
+                    {
                         cityId: 613,
-                        name: "Panapitiya - Kaluthara"
-                    }, {
+                        name: 'Panapitiya - Kaluthara',
+                    },
+                    {
                         cityId: 628,
-                        name: "Payagala"
-                    }, {
+                        name: 'Payagala',
+                    },
+                    {
                         cityId: 629,
-                        name: "Pelawatte"
-                    }, {
+                        name: 'Pelawatte',
+                    },
+                    {
                         cityId: 651,
-                        name: "Pokunuwita"
-                    }, {
+                        name: 'Pokunuwita',
+                    },
+                    {
                         cityId: 652,
-                        name: "Polegoda - Mahagama"
-                    }, {
+                        name: 'Polegoda - Mahagama',
+                    },
+                    {
                         cityId: 660,
-                        name: "Poruwadanda"
-                    }, {
+                        name: 'Poruwadanda',
+                    },
+                    {
                         cityId: 819,
-                        name: "Wadduwa"
-                    }, {
+                        name: 'Wadduwa',
+                    },
+                    {
                         cityId: 845,
-                        name: "Wekada - panadura"
-                    }, {
+                        name: 'Wekada - panadura',
+                    },
+                    {
                         cityId: 853,
-                        name: "Welipenna"
-                    }, {
+                        name: 'Welipenna',
+                    },
+                    {
                         cityId: 855,
-                        name: "Welipenne - Site B"
-                    }, {
+                        name: 'Welipenne - Site B',
+                    },
+                    {
                         cityId: 877,
-                        name: "Yatadola - Mathugama"
-                    }]
-            }]
-    }];
+                        name: 'Yatadola - Mathugama',
+                    },
+                ],
+            },
+        ],
+    },
+];
+import fetch from 'node-fetch';
+import * as fs from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const finalFile = join(__dirname, '..', 'data', 'newScrappedData.json');
+const allSheds = {};
+const allIds = new Set();
+const statsNoIds = [];
+const statsDuplicateIds = [];
+(() => __awaiter(void 0, void 0, void 0, function* () {
+    for (const province of allCities) {
+        const { provinceId, district: districts } = province;
+        for (const district of districts) {
+            const { districtId } = district;
+            const response = yield fetch('https://fuel.gov.lk/api/v1/sheddetails/search', {
+                headers: {
+                    accept: 'application/json, text/plain, */*',
+                    'cache-control': 'no-cache',
+                    'content-type': 'application/json',
+                    pragma: 'no-cache',
+                },
+                body: JSON.stringify({
+                    province: provinceId,
+                    district: districtId,
+                    fuelType: 'p92',
+                }),
+                method: 'POST',
+            });
+            if (!response.ok) {
+                console.log('Error: ', response.status);
+                debugger;
+            }
+            else {
+                const data = yield response.json();
+                if (data.length > 0) {
+                    for (const shed of data) {
+                        const { shedId } = shed;
+                        const p92Response = yield fetch(`https://fuel.gov.lk/api/v1/sheddetails/${shedId}/p92`, {
+                            headers: {
+                                accept: 'application/json, text/plain, */*',
+                                'cache-control': 'no-cache',
+                                pragma: 'no-cache',
+                            },
+                            body: null,
+                            method: 'GET',
+                        });
+                        if (!p92Response.ok) {
+                            console.log('Error: ', p92Response.status);
+                            debugger;
+                        }
+                        else {
+                            const p92Data = yield p92Response.json();
+                            if (allIds.has(shedId)) {
+                                console.log('Duplicate ID: ', shedId);
+                            }
+                            else {
+                                allIds.add(shedId);
+                                const thisProvince = allCities.find((p) => p.provinceId === provinceId);
+                                if (!thisProvince) {
+                                    console.log(`Province not found: ${provinceId}`);
+                                    debugger;
+                                }
+                                const thisDistrict = thisProvince.district.find((d) => d.districtId === districtId);
+                                if (!thisDistrict) {
+                                    console.log(`thisDistrict not found: ${thisDistrict}`);
+                                    debugger;
+                                }
+                                // thisDistrict.cities
+                                allSheds[shedId] = Object.assign(Object.assign({ p92Data }, shed), { districtId,
+                                    provinceId });
+                                console.log(`Downloading ${shedId}`);
+                            }
+                        }
+                    }
+                }
+                else {
+                    console.log('Error: ', response.status);
+                    debugger;
+                }
+            }
+        }
+    }
+    fs.writeFileSync(finalFile, JSON.stringify(allSheds));
+}))();
 //# sourceMappingURL=cities.js.map

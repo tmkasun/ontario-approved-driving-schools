@@ -80,3 +80,18 @@
         opacity: 0;
     }
 }
+
+/* New marker */
+
+.logoGlow {
+    cursor: pointer;
+}
+
+.logoGlow:hover {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 22, 84, 0.631);
+    -moz-box-shadow: 0px 0px 30px 0px rgba(0, 22, 84, 0.631);
+    box-shadow: 0px 0px 30px 0px rgba(0, 22, 84, 0.631);
+}

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { cities } from '../../../data/cities';
 import CitiesList from './CitiesList';
 
@@ -9,7 +9,8 @@ export default function Grouped({ setCurrentLocation }: any) {
     const [selectedCity, setSelectedCity] = React.useState(null);
 
     return (
-        <Box display="flex" flexDirection="column">
+        <Box mx={1} display="flex" flexDirection="column">
+            <Typography variant="subtitle2">Search By City Name</Typography>
             <Box display="flex" width={1}>
                 <Autocomplete
                     id="grouped-cities"
