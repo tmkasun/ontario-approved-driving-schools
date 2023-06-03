@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "React example starter project",
   "engines" : { 
-    "node" : ">=18.0.0 <19.0.0"
+    "node" : ">=18.0.0 <18.13.0"
   },
   "keywords": [
     "react",
