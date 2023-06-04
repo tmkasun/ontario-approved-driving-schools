@@ -36,10 +36,9 @@ export default function AreaSelect(props) {
             }, { enableHighAccuracy: true });
     }
     return (
-        <Box mx={1} justifyContent='center' alignItems='flex-start' display='flex' flexDirection='column'>
+        <Box mx={1} justifyContent='center' bgcolor='white' alignItems='flex-start' display='flex'>
             <PlaceSelector onValueChange={onSelectedLocationChangeHandler} />
             <Box sx={(theme) => ({
-                margin: theme.spacing(1),
                 position: 'relative',
             })}>
                 <Tooltip title='Locate me'>

@@ -62,6 +62,7 @@ export default function PlaceSelector(props) {
             autoComplete
             autoHighlight
             fullWidth
+            size='small'
             includeInputInList
             filterSelectedOptions
             value={value}

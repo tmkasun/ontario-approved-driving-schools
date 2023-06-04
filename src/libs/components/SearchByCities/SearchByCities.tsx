@@ -24,11 +24,13 @@ function Grouped({ setCurrentLocation, approvedSchools, onSearch, setIsLoading }
         [],
     );
     return (
-        <Box mx={1} display="flex" flexDirection="column">
+        <Box bgcolor='white' display="flex" flexDirection="column">
             <Box display="flex" width={1}>
                 <Autocomplete
                     id="grouped-cities"
                     freeSolo
+                    size='small'
+                    closeText=''
                     onChange={(event, selectedCity: any) => {
                         if (!selectedCity || typeof selectedCity === 'string') {
                             return;
@@ -47,17 +49,13 @@ function Grouped({ setCurrentLocation, approvedSchools, onSearch, setIsLoading }
                     groupBy={(option: any) => option.city}
                     getOptionLabel={(option: any) => option.name}
                     fullWidth
-                    renderInput={(params: any) => {
-                        return (
-                            <TextField onChange={(e) => {
-                                updateList(e.target.value);
-                                setIsLoading(true);
-                                if (params) {
-                                    params?.inputProps?.onChange(e)
-                                }
-                            }} {...params} label="Driving School Name" />
-                        )
+                    onInputChange={(e, value) => {
+                        updateList(value);
+                        setIsLoading(true);
                     }}
+                    renderInput={(params: any) =>
+                        <TextField {...params} label="Driving School Name" />
+                    }
                 />
             </Box>
             <Box display="flex" width={1}>

@@ -237,9 +237,7 @@ export default function MarkerCard({ drivingSchool }) {
                 >
                     Phone Number(s)
                 </Typography>
-                <Box ml={3}>
-                    {phoneNumber}
-                </Box>
+                <Box ml={3} dangerouslySetInnerHTML={{ __html: phoneNumber }} />
             </Box>
             <CardActions>
                 <Link

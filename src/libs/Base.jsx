@@ -34,9 +34,9 @@ HideOnScroll.propTypes = {
 export default function HideAppBar(props) {
     const { children, isLoading, ...rest } = props;
     return (
-        <>
+        <Box position='relative'>
             <CssBaseline />
             {children}
-        </>
+        </Box>
     );
 }

@@ -70,7 +70,7 @@ const getCleanedSchoolList = () =>
         let fixedName = name;
         let fixedAddress = address;
         let fixedPhoneNumber = phoneNumber;
-        if (phoneNumberRegex.test(phoneNumber)) {
+        if (false && phoneNumberRegex.test(phoneNumber)) {
             fixedPhoneNumber = phoneNumber.replaceAll(phoneNumberRegex, '$1')
         }
 
@@ -126,17 +126,20 @@ const GasStationsMap = () => {
                 />
             )}
 
-            <Grid xs={12} sm={3} item height={1}>
-                <Box display='flex' flexDirection='column' height={1}>
+            <Grid position='absolute' gap={1} left={0} top={0} zIndex={1000} container>
+                <Grid item md={5} xs={12} mx={1} mt='1rem'>
+                    <SearchByCities
+                        setCurrentLocation={setCurrentLocation}
+                        approvedSchools={cleanedSchoolsList}
+                        onSearch={setFilteredSchools}
+                        setIsLoading={setIsLoading}
+                    />
+                </Grid>
+                <Grid item md={5} xs={12} mt='1rem'>
+                    <AreaSelect onLocationChange={setCurrentLocation} />
+                </Grid>
+                {/* <Box display='flex' flexDirection='column' height={1}>
                     <Box display='flex' flexGrow={1} flexDirection='column' rowGap={1} mt={1} alignItems='stretch'>
-                        <SearchByCities
-                            setCurrentLocation={setCurrentLocation}
-                            approvedSchools={cleanedSchoolsList}
-                            onSearch={setFilteredSchools}
-                            setIsLoading={setIsLoading}
-                        />
-
-                        <AreaSelect onLocationChange={setCurrentLocation} />
                         <Button style={{ color: '#a20000' }} onClick={reset}>
                             RESET
                         </Button>
@@ -160,12 +163,12 @@ const GasStationsMap = () => {
                             </Fab>
                         </Link>
                     </Box>
-                </Box>
+                </Box> */}
             </Grid>
-            <Grid xs={12} sm={9} item>
+            <Grid xs={12} item>
                 <Box border={0} boxShadow={3}>
                     <MapContainer
-                        zoomControl
+                        zoomControl={false}
                         style={{ height: '100vh' }}
                         center={mapCenter}
                         zoom={zoom}
