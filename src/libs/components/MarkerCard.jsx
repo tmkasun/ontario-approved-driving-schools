@@ -193,10 +193,18 @@ shedownerupdatetoday: false
  * @returns
  */
 export default function MarkerCard({ drivingSchool }) {
-    const { defensive_driving_course: { content: isDefAvailable }, digital_curriculum: { content: isDigiAvailable },
-        phone: { content: phoneNumber }, school: { content: schoolName },
-        address: { content: address }, city, long: longitude, lat: latitude } =
-        drivingSchool;
+    const
+        {
+            name,
+            address,
+            phoneNumber,
+            longitude,
+            latitude,
+            city,
+            isDefAvailable,
+            isDigiAvailable
+        } =
+            drivingSchool;
 
     return (
         <Box
@@ -230,8 +238,7 @@ export default function MarkerCard({ drivingSchool }) {
                     Available products
                 </Typography>
                 <Box ml={3}>
-
-                    ok
+                    {phoneNumber}
                 </Box>
             </Box>
             <CardActions>

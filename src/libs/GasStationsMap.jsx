@@ -59,10 +59,36 @@ function ChangeView({ center, zoom }) {
     return null;
 }
 
+const cleanUpRegex = /<abbr[^>]+?>([^$]+?)<\/abbr>/i
+const getCleanedSchoolList = () =>
+    approvedSchools.map(({ defensive_driving_course: { content: isDefAvailable }, digital_curriculum: { content: isDigiAvailable },
+        phone: { content: phoneNumber }, school: { content: name },
+        address: { content: address }, city, long: longitude, lat: latitude }) => {
+        let fixedName = name;
+        let fixedAddress = address;
+        if (cleanUpRegex.test(name)) {
+            fixedName = name.replace(cleanUpRegex, '$1')
+        }
+        if (cleanUpRegex.test(address)) {
+            fixedAddress = address.replace(cleanUpRegex, '$1')
+        }
+        return {
+            name: fixedName,
+            address: fixedAddress,
+            phoneNumber,
+            longitude,
+            latitude,
+            city,
+            isDefAvailable: isDefAvailable === 'Available',
+            isDigiAvailable: isDigiAvailable === 'Available'
+        }
+    }
+    )
 const GasStationsMap = () => {
     const [currentLocation, setCurrentLocation] = useState(null);
-    const [gasStationsMap, error, isLoading] = useGasStations();
-    const gasStations = approvedSchools;
+    const [isLoading, setIsLoading] = useState(false);
+    const cleanedSchoolsList = useMemo(getCleanedSchoolList, [])
+    const [filteredSchools, setFilteredSchools] = useState(cleanedSchoolsList);
     const reset = () => {
         setCurrentLocation(null);
     };
@@ -96,6 +122,9 @@ const GasStationsMap = () => {
                     <Box display='flex' flexGrow={1} flexDirection='column' alignItems='stretch'>
                         <SearchByCities
                             setCurrentLocation={setCurrentLocation}
+                            approvedSchools={cleanedSchoolsList}
+                            onSearch={setFilteredSchools}
+                            setIsLoading={setIsLoading}
                         />
                         <Button style={{ color: '#a20000' }} onClick={reset}>
                             RESET
@@ -113,7 +142,7 @@ const GasStationsMap = () => {
                                 >
                                     Total
                                 </Box>
-                                {gasStations && gasStations.length}
+                                {filteredSchools && filteredSchools.length}
                             </Typography>
                         </Box>
                     </Box>
@@ -155,12 +184,12 @@ const GasStationsMap = () => {
                             tileSize={512}
                             zoomOffset={-1}
                         />
-                        <MarkerClusterGroup>
-                            {gasStations &&
-                                gasStations.map((drivingSchool) => {
-                                    const { lat: latitude, long: longitude, city } = drivingSchool;
+                        <MarkerClusterGroup key={filteredSchools.length}>
+                            {filteredSchools &&
+                                filteredSchools.map((drivingSchool) => {
+                                    const { latitude, longitude, name } = drivingSchool;
                                     const position = [latitude, longitude];
-                                    const id = `${latitude}${longitude}`;
+                                    const id = `${latitude}${longitude}-${name}`;
                                     return (
                                         <Marker
                                             key={id}
