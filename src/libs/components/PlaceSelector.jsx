@@ -5,7 +5,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import throttle from 'lodash.throttle';
-import LinearProgress from '@mui/material/LinearProgress';
+import MyLocationIcon from '@mui/icons-material/MyLocation';
 import { Typography } from '@mui/material';
 
 export default function PlaceSelector(props) {
@@ -56,12 +56,12 @@ export default function PlaceSelector(props) {
     return (
         <Autocomplete
             id="klocation"
-            style={{ width: '100%' }}
             getOptionLabel={(option) => option.formatted}
             filterOptions={(x) => x}
             options={options}
             autoComplete
             autoHighlight
+            fullWidth
             includeInputInList
             filterSelectedOptions
             value={value}

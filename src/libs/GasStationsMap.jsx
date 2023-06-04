@@ -91,6 +91,7 @@ const GasStationsMap = () => {
     const [filteredSchools, setFilteredSchools] = useState(cleanedSchoolsList);
     const reset = () => {
         setCurrentLocation(null);
+        setFilteredSchools(cleanedSchoolsList)
     };
     const mapCenter = currentLocation
         ? [currentLocation.coords.latitude, currentLocation.coords.longitude]
@@ -119,19 +120,17 @@ const GasStationsMap = () => {
 
             <Grid xs={12} sm={3} item height={1}>
                 <Box display='flex' flexDirection='column' height={1}>
-                    <Box display='flex' flexGrow={1} flexDirection='column' alignItems='stretch'>
+                    <Box display='flex' flexGrow={1} flexDirection='column' rowGap={1} mt={1} alignItems='stretch'>
                         <SearchByCities
                             setCurrentLocation={setCurrentLocation}
                             approvedSchools={cleanedSchoolsList}
                             onSearch={setFilteredSchools}
                             setIsLoading={setIsLoading}
                         />
+
+                        <AreaSelect onLocationChange={setCurrentLocation} />
                         <Button style={{ color: '#a20000' }} onClick={reset}>
                             RESET
-                        </Button>
-                        <AreaSelect onLocationChange={setCurrentLocation} />
-                        <Button onClick={reset}>
-                            Locate Me
                         </Button>
                         <Box color="success.main" textAlign="center">
                             <Typography variant="subtitle2">

@@ -36,7 +36,7 @@ export default function AreaSelect(props) {
             }, { enableHighAccuracy: true });
     }
     return (
-        <Box width={1} justifyContent='center' alignItems='center' display='flex'>
+        <Box mx={1} justifyContent='center' alignItems='flex-start' display='flex' flexDirection='column'>
             <PlaceSelector onValueChange={onSelectedLocationChangeHandler} />
             <Box sx={(theme) => ({
                 margin: theme.spacing(1),
