@@ -5,8 +5,12 @@ import { Box, Typography } from '@mui/material';
 import approvedSchools from '../../../data/schools.json';
 import CitiesList from './CitiesList';
 
+const cleanUpRegex = /<abbr[^>]+?>([^$]+?)<\/abbr>/i
+
 export default function Grouped({ setCurrentLocation }: any) {
     const [selectedCity, setSelectedCity] = React.useState(null);
+    const [settypedName, setTypedName] = React.useState('');
+
     const cities = approvedSchools;
     return (
         <Box mx={1} display="flex" flexDirection="column">
@@ -16,20 +20,35 @@ export default function Grouped({ setCurrentLocation }: any) {
                     id="grouped-cities"
                     onChange={(event, value: any) => setSelectedCity(value)}
                     options={cities.map(
-                        ({ school: { content: name }, lat, long, city }) => ({
-                            name,
-                            lat,
-                            long,
-                            city
-                        })
+                        ({ school: { content: name }, lat, long, city }) => {
+                            let fixedName = name;
+                            if (cleanUpRegex.test(name)) {
+                                fixedName = name.replace(cleanUpRegex, '$1')
+                            }
+                            return ({
+                                name: fixedName,
+                                lat,
+                                long,
+                                city
+                            })
+                        }
 
                     )}
                     groupBy={(option) => option.city}
                     getOptionLabel={(option) => option.name}
                     fullWidth
-                    renderInput={(params) => (
-                        <TextField {...params} label="Enter a city name" />
-                    )}
+
+                    renderInput={(params: any) => {
+                        return (
+                            <TextField onChange={(e) => {
+                                setTypedName(e.target.value);
+                                console.log(e.target.value)
+                                if (params) {
+                                    params?.inputProps?.onChange(e)
+                                }
+                            }} {...params} label="Driving School Name" />
+                        )
+                    }}
                 />
             </Box>
             <Box display="flex" width={1}>

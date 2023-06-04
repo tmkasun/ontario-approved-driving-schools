@@ -200,11 +200,10 @@ export default function MarkerCard({ drivingSchool }) {
 
     return (
         <Box
-            sx={{
-                minWidth: 475,
-            }}
+            display='flex'
+            flexDirection='column'
         >
-            <Box display='flex'>
+            <Box display='flex' flexDirection='column'>
                 <Typography
                     sx={{
                         fontSize: 19,
