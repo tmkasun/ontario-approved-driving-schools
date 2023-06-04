@@ -127,6 +127,16 @@ const GasStationsMap = () => {
             )}
 
             <Grid position='absolute' gap={1} left={0} top={0} zIndex={1000} container>
+                <Grid item xs={12} mx={1} bgcolor='white'>
+                    <Typography variant='h4'>
+                        Ontario Driving Schools
+                    </Typography>
+                    <Link href="https://www.ontario.ca/page/government-approved-driving-schools" target='_blank'>
+                        <Typography variant='subtitle1'>
+                            Source
+                        </Typography>
+                    </Link>
+                </Grid>
                 <Grid item md={5} xs={12} mx={1} mt='1rem'>
                     <SearchByCities
                         setCurrentLocation={setCurrentLocation}

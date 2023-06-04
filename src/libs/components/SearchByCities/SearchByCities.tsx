@@ -54,7 +54,7 @@ function Grouped({ setCurrentLocation, approvedSchools, onSearch, setIsLoading }
                         setIsLoading(true);
                     }}
                     renderInput={(params: any) =>
-                        <TextField {...params} label="Driving School Name" />
+                        <TextField autoFocus {...params} label="Driving School Name" />
                     }
                 />
             </Box>
