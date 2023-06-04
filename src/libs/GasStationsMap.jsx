@@ -9,6 +9,8 @@ import LinearProgress from '@mui/material/LinearProgress';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import approvedSchools from '../data/schools.json';
+import Fab from '@mui/material/Fab';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 import AreaSelect from './components/AreaSelect';
 import useGasStations from './hooks/useGasStations';
@@ -145,23 +147,11 @@ const GasStationsMap = () => {
                             </Typography>
                         </Box>
                     </Box>
-                    <Box display='flex' color="text.secondary">
-                        Data source :{' '}
-                        <Link
-                            target="_blank"
-                            rel="noopener"
-                            href={'https://home.knnect.com:9443/devportal/'}
-                        >
-                            GitHub
-                        </Link>
-                        {'    '}
-                        Source code :{' '}
-                        <Link
-                            target="_blank"
-                            rel="noopener"
-                            href={'https://github.com/tmkasun/better-fuel-gov.lk'}
-                        >
-                            GitHub
+                    <Box m={2} display='flex' color="text.secondary">
+                        <Link href="https://github.com/tmkasun/ontario-approved-driving-schools">
+                            <Fab size="small" color='primary' aria-label="Source">
+                                <GitHubIcon />
+                            </Fab>
                         </Link>
                     </Box>
                 </Box>
