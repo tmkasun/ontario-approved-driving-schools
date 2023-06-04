@@ -7,7 +7,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Box from '@mui/material/Box';
 import Slide from '@mui/material/Slide';
-import Link from '@mui/material/Link';
 
 function HideOnScroll(props) {
     const { children, window } = props;
@@ -37,41 +36,7 @@ export default function HideAppBar(props) {
     return (
         <>
             <CssBaseline />
-            <HideOnScroll {...rest}>
-                <AppBar
-                    sx={{
-                        backdropFilter: 'blur(4px)',
-                        backgroundColor: '#0071adbd',
-                    }}
-                >
-                    <Toolbar>
-                        <Typography sx={{ flexGrow: 1 }} variant="h6">
-                            🇱🇰 Fuel Availability
-                        </Typography>
-                    </Toolbar>
-                </AppBar>
-            </HideOnScroll>
-            <Toolbar />
-            <Box>{children}</Box>
-            <Box color="text.secondary">
-                Data source :{' '}
-                <Link
-                    target="_blank"
-                    rel="noopener"
-                    href={'https://home.knnect.com:9443/devportal/'}
-                >
-                    GitHub
-                </Link>
-                {'    '}
-                Source code :{' '}
-                <Link
-                    target="_blank"
-                    rel="noopener"
-                    href={'https://github.com/tmkasun/better-fuel-gov.lk'}
-                >
-                    GitHub
-                </Link>
-            </Box>
+            {children}
         </>
     );
 }

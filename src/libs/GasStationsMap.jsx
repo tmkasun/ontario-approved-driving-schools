@@ -8,6 +8,7 @@ import Checkbox from '@mui/material/Checkbox';
 import LinearProgress from '@mui/material/LinearProgress';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
+import approvedSchools from '../data/schools.json';
 
 import AreaSelect from './components/AreaSelect';
 import useGasStations from './hooks/useGasStations';
@@ -16,15 +17,16 @@ import SearchByCities from './components/SearchByCities/SearchByCities';
 
 import './css/map.css';
 import 'leaflet/dist/leaflet.css';
+import Link from '@mui/material/Link';
 
-const getMarker = (shedType) => {
+const getMarker = (shedType = 1) => {
     const pinClass = 'pin-oneavailable';
     const pinEffectClass = 'pin-oneavailable-effect';
 
     switch (shedType) {
         case 1:
             return new L.icon({
-                iconUrl: 'mapIcons/cepetco.png',
+                iconUrl: 'mapIcons/icon.png',
                 iconSize: [30, 30], // size of the icon
                 className: 'logoGlow',
             });
@@ -60,19 +62,14 @@ function ChangeView({ center, zoom }) {
 const GasStationsMap = () => {
     const [currentLocation, setCurrentLocation] = useState(null);
     const [gasStationsMap, error, isLoading] = useGasStations();
-    const gasStations = useMemo(
-        () =>
-            gasStationsMap ? Object.entries(gasStationsMap) : gasStationsMap,
-        [gasStationsMap]
-    );
-
+    const gasStations = approvedSchools;
     const reset = () => {
         setCurrentLocation(null);
     };
     const mapCenter = currentLocation
         ? [currentLocation.coords.latitude, currentLocation.coords.longitude]
-        : [7.79, 80.91];
-    const { zoom: customZoom = 13 } = currentLocation || {};
+        : [43.7181228, -79.5428661];
+    const { zoom: customZoom = 11 } = currentLocation || {};
     const zoom = currentLocation && customZoom ? customZoom : 8;
     return (
         <Grid
@@ -80,6 +77,7 @@ const GasStationsMap = () => {
             direction="row"
             justifyContent="flex-end"
             alignItems="flex-start"
+            height={1}
         >
             {isLoading && (
                 <LinearProgress
@@ -93,33 +91,19 @@ const GasStationsMap = () => {
                 />
             )}
 
-            <Grid
-                container
-                direction="row"
-                justifyContent="center"
-                xs={12}
-                sm={3}
-                item
-            >
-                <Grid
-                    container
-                    direction="row"
-                    justifyContent="space-between"
-                    alignItems="center"
-                    item
-                    xs={12}
-                >
-                    <Grid xs={12} item>
+            <Grid xs={12} sm={3} item height={1}>
+                <Box display='flex' flexDirection='column' height={1}>
+                    <Box display='flex' flexGrow={1} flexDirection='column' alignItems='stretch'>
                         <SearchByCities
                             setCurrentLocation={setCurrentLocation}
                         />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
                         <Button style={{ color: '#a20000' }} onClick={reset}>
                             RESET
                         </Button>
-                    </Grid>
-                    <Grid item xs={12} sm={3}>
+                        <AreaSelect onLocationChange={setCurrentLocation} />
+                        <Button onClick={reset}>
+                            Locate Me
+                        </Button>
                         <Box color="success.main" textAlign="center">
                             <Typography variant="subtitle2">
                                 <Box
@@ -132,15 +116,33 @@ const GasStationsMap = () => {
                                 {gasStations && gasStations.length}
                             </Typography>
                         </Box>
-                    </Grid>
-                </Grid>
+                    </Box>
+                    <Box display='flex' color="text.secondary">
+                        Data source :{' '}
+                        <Link
+                            target="_blank"
+                            rel="noopener"
+                            href={'https://home.knnect.com:9443/devportal/'}
+                        >
+                            GitHub
+                        </Link>
+                        {'    '}
+                        Source code :{' '}
+                        <Link
+                            target="_blank"
+                            rel="noopener"
+                            href={'https://github.com/tmkasun/better-fuel-gov.lk'}
+                        >
+                            GitHub
+                        </Link>
+                    </Box>
+                </Box>
             </Grid>
-
             <Grid xs={12} sm={9} item>
                 <Box border={0} boxShadow={3}>
                     <MapContainer
                         zoomControl
-                        style={{ overflow: 'hidden', height: '90vh' }}
+                        style={{ height: '100vh' }}
                         center={mapCenter}
                         zoom={zoom}
                         scrollWheelZoom
@@ -155,22 +157,19 @@ const GasStationsMap = () => {
                         />
                         <MarkerClusterGroup>
                             {gasStations &&
-                                gasStations.map(([shedId, gasStation]) => {
-                                    const { p92Data: gasStationP92, shedType } =
-                                        gasStation;
-                                    const { id, longitude, latitude } =
-                                        gasStationP92;
-                                    const position = [longitude, latitude];
-                                    debugger;
+                                gasStations.map((drivingSchool) => {
+                                    const { lat: latitude, long: longitude, city } = drivingSchool;
+                                    const position = [latitude, longitude];
+                                    const id = `${latitude}${longitude}`;
                                     return (
                                         <Marker
-                                            key={shedId}
-                                            icon={getMarker(shedType)}
+                                            key={id}
+                                            icon={getMarker()}
                                             position={position}
                                         >
                                             <Popup>
                                                 <MarkerCard
-                                                    gasStation={gasStationP92}
+                                                    drivingSchool={drivingSchool}
                                                 />
                                             </Popup>
                                         </Marker>

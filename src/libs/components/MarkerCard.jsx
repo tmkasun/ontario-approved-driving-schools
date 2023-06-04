@@ -192,116 +192,35 @@ shedownerupdatetoday: false
  * @param {*} props
  * @returns
  */
-export default function MarkerCard({ gasStation }) {
-    const { id, province, district, city, lane, longitude, latitude } =
-        gasStation;
-    const provinceCode = getProvinceCode(province);
-    const districtCode = getDistrictCode(district);
-    const cityCode = getCityCode(city);
-    // https://fuel.gov.lk/api/v1/sheddetails/1122
-    const {
-        isError: isShedError,
-        isLoading: isShedLoading,
-        data: shedData,
-        error: shedError,
-    } = useQuery([id], async () => {
-        const response = await fetch(`${API_BASE}/sheddetails/${id}`);
-        if (!response.ok) {
-            throw new Error('Unable to fetch data Check the APIM endpoint');
-        }
-        return response.json();
-    });
-    const {
-        isError: isP92Error,
-        isLoading: isP92Loading,
-        data: p92Data,
-        error: p92Error,
-    } = useQuery(
-        ['p92', provinceCode, cityCode, districtCode],
-        fetchFuelDetails
-    );
-    const {
-        isError: isDError,
-        isLoading: isDLoading,
-        data: dData,
-        error: dError,
-    } = useQuery(
-        ['d', provinceCode, cityCode, districtCode],
-        fetchFuelDetails
-    );
+export default function MarkerCard({ drivingSchool }) {
+    const { defensive_driving_course: { content: isDefAvailable }, digital_curriculum: { content: isDigiAvailable },
+        phone: { content: phoneNumber }, school: { content: schoolName },
+        address: { content: address }, city, long: longitude, lat: latitude } =
+        drivingSchool;
 
-    let thisShedP92;
-    if (!isP92Loading && !isP92Error) {
-        thisShedP92 = p92Data.find(({ shedId }) => shedId === id);
-    }
-    let thisShedD;
-    if (!isDLoading && !isDError) {
-        thisShedD = dData.find(({ shedId }) => shedId === id);
-    }
-    const {
-        phoneNumber,
-        shedName,
-        fuelAvailabilityDTO,
-        instituteId,
-        p92Availablity,
-        p95Availablity,
-        davailablity,
-        sdavailablity,
-        ikavailablity,
-        kavailablity,
-        p92Capacity,
-        p95Capacity,
-        dcapacity,
-        sdcapacity,
-        ikcapacity,
-        kcapacity,
-        shedCode,
-    } = shedData || {};
-    const { lastUpdateByShed } = fuelAvailabilityDTO || {};
-    if (isShedError) {
-        return (
-            <Alert severity="error">
-                <AlertTitle>Error</AlertTitle>
-                Reason - <strong>{shedError.message}</strong>
-            </Alert>
-        );
-    }
     return (
         <Box
             sx={{
                 minWidth: 475,
             }}
         >
-            <Box>
+            <Box display='flex'>
                 <Typography
                     sx={{
-                        fontSize: 14,
+                        fontSize: 19,
                     }}
-                    color="textSecondary"
                     gutterBottom
                 >
-                    Last Updated
+                    {schoolName}
                 </Typography>
-                <Box ml={3}>
-                    {!isShedLoading ? (
-                        <Typography variant="h6" component="h6">
-                            <code>{dayjs().to(dayjs(lastUpdateByShed))}</code>
-                        </Typography>
-                    ) : (
-                        <Skeleton variant="text" width={200} />
-                    )}
-                </Box>
+
                 <Typography color="textSecondary" gutterBottom>
                     Address
                 </Typography>
                 <Box ml={3}>
-                    {!isShedLoading ? (
-                        <Typography variant="h6" component="h6">
-                            <code>{shedName}</code>
-                        </Typography>
-                    ) : (
-                        <Skeleton animation="wave" />
-                    )}
+                    <Typography variant="h6" component="h6">
+                        <code>{address}</code>
+                    </Typography>
                 </Box>
                 <Typography
                     sx={{
@@ -312,76 +231,20 @@ export default function MarkerCard({ gasStation }) {
                     Available products
                 </Typography>
                 <Box ml={3}>
-                    <Typography variant="body2" component="p">
-                        Petrol
-                        {!isP92Loading && thisShedP92 ? (
-                            thisShedP92.bowserDispatch ? (
-                                <Box ml={3}>
-                                    <Img
-                                        isDispatched={true}
-                                        width={60}
-                                        src={inComingLoad}
-                                    />
-                                    Dispatched : <code>{dayjs().to(dayjs(thisShedP92.eta.split(',')[0]))}</code>
-                                     <pre>{thisShedP92.eta.split(',')[1]}</pre>
-                                </Box>
-                            ) : (
-                                <Box display="flex" color="red" mx={3}>
-                                    Not Dispatched
-                                </Box>
-                            )
-                        ) : (
-                            <Skeleton
-                                animation="wave"
-                                variant="rectangular"
-                                width={20}
-                                height={20}
-                            />
-                        )}
-                    </Typography>
-                    <Typography variant="body2" component="p">
-                        Diesel
-                        {!isDLoading && thisShedD ? (
-                            thisShedD.bowserDispatch ? (
-                                <Box ml={3}>
-                                    <Img
-                                        isDispatched={true}
-                                        width={60}
-                                        src={inComingLoad}
-                                    />
-                                     Dispatched : <code>{dayjs().to(dayjs(thisShedD.eta.split(',')[0]))}</code>
-                                     <pre>{thisShedD.eta.split(',')[1]}</pre>
-                                </Box>
-                            ) : (
-                                <Box display="flex" color="red" mx={3}>
-                                    Not Dispatched
-                                </Box>
-                            )
-                        ) : (
-                            <Skeleton
-                                animation="wave"
-                                variant="rectangular"
-                                width={20}
-                                height={20}
-                            />
-                        )}
-                    </Typography>
+
+                    ok
                 </Box>
             </Box>
             <CardActions>
-                {!isShedLoading ? (
-                    <Link
-                        target="_blank"
-                        rel="noopener"
-                        href={`https://www.google.com/maps/dir/?api=1&travelmode=driving&layer=traffic&destination=${longitude},${latitude}`}
-                    >
-                        <Button variant="outlined" color="primary" size="small">
-                            Directions
-                        </Button>
-                    </Link>
-                ) : (
-                    <Skeleton animation="wave" />
-                )}
+                <Link
+                    target="_blank"
+                    rel="noopener"
+                    href={`https://www.google.com/maps/dir/?api=1&travelmode=driving&layer=traffic&destination=${latitude},${longitude}`}
+                >
+                    <Button variant="outlined" color="primary" size="small">
+                        Directions
+                    </Button>
+                </Link>
             </CardActions>
         </Box>
     );

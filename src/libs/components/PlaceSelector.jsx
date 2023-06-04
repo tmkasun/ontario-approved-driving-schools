@@ -23,7 +23,7 @@ export default function PlaceSelector(props) {
             throttle((inputValue, callback) => {
                 setIsLoading(true);
                 // fetch(`https://api.opencagedata.com/geocode/v1/json?q=${inputValue}&key=47a4473508fc49518ad05cb0d84f94b8&countrycode=lk`)
-                fetch(`https://api.opencagedata.com/geosearch?q=${inputValue}&limit=5&language=en&countrycode=lk`, { headers: { 'opencage-geosearch-key': 'oc_gs_SJqvrAWtCs2mcAvMs5f9yPs6LI1QcD' } })
+                fetch(`https://api.opencagedata.com/geosearch?q=${inputValue}&limit=5&language=en&countrycode=ca`, { headers: { 'opencage-geosearch-key': 'oc_gs_SJqvrAWtCs2mcAvMs5f9yPs6LI1QcD' } })
                     .then(r => r.json()).then(callback)
             }, 200),
         [],
@@ -73,7 +73,7 @@ export default function PlaceSelector(props) {
                 setInputValue(newInputValue);
             }}
             renderInput={(params) => (
-                <TextField {...params} label="Location (i:e Ganemulla, Moratuwa ... )" variant="outlined" fullWidth />
+                <TextField {...params} label="Location" variant="outlined" fullWidth />
             )}
             loading={isLoading}
             renderOption={(props, option) => {

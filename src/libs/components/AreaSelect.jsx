@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import NavigationIcon from '@mui/icons-material/Navigation';
+import MyLocationIcon from '@mui/icons-material/MyLocation';
 import IconButton from '@mui/material/IconButton';
 import { green } from '@mui/material/colors';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -15,13 +15,13 @@ export default function AreaSelect(props) {
     const onSelectedLocationChangeHandler = (newLocation) => {
         if (newLocation) {
             const { lat, lng } = newLocation.geometry
-            onLocationChange({ coords: { latitude: lat, longitude: lng } })
+            onLocationChange({ coords: { latitude: lat, longitude: lng }, zoom: 14 })
         }
     }
     const getLocationHandler = () => {
         setIsLocating(true)
         navigator.geolocation.getCurrentPosition(async (position) => {
-            onLocationChange(position);
+            onLocationChange({ coords: position.coords, zoom: 14 });
             setLocationStatus(null)
             setIsLocating(false)
             // const { latitude, longitude } = position.coords;
@@ -33,10 +33,10 @@ export default function AreaSelect(props) {
             () => {
                 setLocationStatus('Unable to retrieve your location');
                 setIsLocating(false)
-            });
+            }, { enableHighAccuracy: true });
     }
     return (
-        <Box width={1} ml={4} justifyContent='center' alignItems='center' display='flex'>
+        <Box width={1} justifyContent='center' alignItems='center' display='flex'>
             <PlaceSelector onValueChange={onSelectedLocationChangeHandler} />
             <Box sx={(theme) => ({
                 margin: theme.spacing(1),
@@ -44,7 +44,7 @@ export default function AreaSelect(props) {
             })}>
                 <Tooltip title='Locate me'>
                     <IconButton color="primary" onClick={getLocationHandler} aria-label="delete">
-                        <NavigationIcon />
+                        <MyLocationIcon />
                     </IconButton>
                 </Tooltip>
                 {isLocating && <CircularProgress size={35}
