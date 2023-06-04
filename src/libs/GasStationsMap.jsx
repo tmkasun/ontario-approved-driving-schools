@@ -62,12 +62,18 @@ function ChangeView({ center, zoom }) {
 }
 
 const cleanUpRegex = /<abbr[^>]+?>([^$]+?)<\/abbr>/i
+const phoneNumberRegex = /<a[^>]+?>([^$]+?)<\/a>/gi
 const getCleanedSchoolList = () =>
     approvedSchools.map(({ defensive_driving_course: { content: isDefAvailable }, digital_curriculum: { content: isDigiAvailable },
         phone: { content: phoneNumber }, school: { content: name },
         address: { content: address }, city, long: longitude, lat: latitude }) => {
         let fixedName = name;
         let fixedAddress = address;
+        let fixedPhoneNumber = phoneNumber;
+        if (phoneNumberRegex.test(phoneNumber)) {
+            fixedPhoneNumber = phoneNumber.replaceAll(phoneNumberRegex, '$1')
+        }
+
         if (cleanUpRegex.test(name)) {
             fixedName = name.replace(cleanUpRegex, '$1')
         }
@@ -77,7 +83,7 @@ const getCleanedSchoolList = () =>
         return {
             name: fixedName,
             address: fixedAddress,
-            phoneNumber,
+            phoneNumber: fixedPhoneNumber,
             longitude,
             latitude,
             city,

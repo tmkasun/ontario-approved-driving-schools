@@ -218,7 +218,7 @@ export default function MarkerCard({ drivingSchool }) {
                     }}
                     gutterBottom
                 >
-                    {schoolName}
+                    {name}
                 </Typography>
 
                 <Typography color="textSecondary" gutterBottom>
@@ -235,7 +235,7 @@ export default function MarkerCard({ drivingSchool }) {
                     }}
                     color="textSecondary"
                 >
-                    Available products
+                    Phone Number(s)
                 </Typography>
                 <Box ml={3}>
                     {phoneNumber}
