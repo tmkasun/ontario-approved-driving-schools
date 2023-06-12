@@ -24,6 +24,7 @@ import { styled } from '@mui/material';
 import dayjs from 'dayjs';
 var relativeTime = require('dayjs/plugin/relativeTime');
 dayjs.extend(relativeTime, { rounding: Math.floor });
+import LaunchIcon from '@mui/icons-material/Launch';
 
 /*
 
@@ -215,10 +216,19 @@ export default function MarkerCard({ drivingSchool }) {
                 <Typography
                     sx={{
                         fontSize: 19,
+                        display: 'flex'
                     }}
                     gutterBottom
                 >
-                    {name}
+                    {name} <Link
+                        sx={{
+                            display: 'flex',
+                            ml: '0.3rem',
+                        }}
+                        target="_blank"
+                        rel="noopener"
+                        href={`https://www.google.com/search?q=${encodeURIComponent(name)}`}
+                    ><LaunchIcon /></Link>
                 </Typography>
 
                 <Typography color="textSecondary" gutterBottom>
